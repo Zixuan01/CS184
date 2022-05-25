@@ -21,7 +21,8 @@ class _MePageState extends State<MePage> {
   }
 
   Widget detail = Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 20),
+    // padding: const EdgeInsets.symmetric(horizontal: 20),
+    padding: EdgeInsets.only(top: 20),
     child: Column(
       children: [
         Padding(
@@ -48,7 +49,122 @@ class _MePageState extends State<MePage> {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
             ),
-      ],
+        /*Padding(
+              padding: const EdgeInsets.only(left: 2.0),
+              child: Text(
+                "Accounting days: ",
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 14),
+              ),
+            ),
+        Padding(
+              padding: const EdgeInsets.only(left: 2.0),
+              child: Text(
+                "Number of accounts: ",
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 14),
+              ),
+            ),*/
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
+          child: Row(
+            children: [
+              const Text("Accounting days:",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: Container(),
+              ),
+              const Text("|",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: Container(),
+              ),
+              const Text("Number of Accounts :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
+          child: Row(
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.checklist), // <-- Icon
+                          Text("Checklist", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.edit_notifications), // <-- Icon
+                          Text("Reminders",  style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.settings), // <-- Icon
+                          Text("Settings", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+            
+      ],  
     ),
   );
 
