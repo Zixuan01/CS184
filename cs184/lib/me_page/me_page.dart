@@ -8,6 +8,8 @@ class MePage extends StatefulWidget {
 }
 
 class _MePageState extends State<MePage> {
+    // var width = MediaQuery.of(context).size.width;
+    // var height = MediaQuery.of(context).size.height;
   int _selected_index = 0;
   static const option_style = TextStyle(
     fontSize: 30,
@@ -49,50 +51,63 @@ class _MePageState extends State<MePage> {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
             ),
-        /*Padding(
-              padding: const EdgeInsets.only(left: 2.0),
-              child: Text(
+        Padding(
+              padding: const EdgeInsets.only(top: 10.0, left: 50.0),
+              child: Container(
+                  width: double.infinity,
+                  child: Text(
                 "Accounting days: ",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 16),
               ),
+              )
             ),
         Padding(
-              padding: const EdgeInsets.only(left: 2.0),
-              child: Text(
-                "Number of accounts: ",
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 14),
-              ),
-            ),*/
+              padding: const EdgeInsets.only(top: 10.0, left: 50.0),
+              child: Container(
+                  width: double.infinity,
+                child: Text(
+                    "Number of accounts: ",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 16),
+                ),
+              )
+            ),
+        // Padding(
+        // //   padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
+        // padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        //   child: Row(
+        //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //     children: [
+        //       const Text("Accounting days:",
+        //           textAlign: TextAlign.center,
+        //           style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        //       Expanded(
+        //         child: Container(),
+        //       ),
+        //       const Text("|",
+        //           textAlign: TextAlign.center,
+        //           style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        //       Expanded(
+        //         child: Container(),
+        //       ),
+        //       const Text("Number of Accounts :",
+        //           textAlign: TextAlign.center,
+        //           style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        //       Expanded(
+        //         child: Container(),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // Expanded(
+        //     child: Container()
+        // ),
         Padding(
-          padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
+            
+          padding: const EdgeInsets.only(top: 20.0),
           child: Row(
-            children: [
-              const Text("Accounting days:",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-              const Text("|",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-              const Text("Number of Accounts :",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
-          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox.fromSize(
                 size: Size(70, 70),
@@ -113,9 +128,9 @@ class _MePageState extends State<MePage> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(),
-              ),
+            //   Expanded(
+            //     child: Container(),
+            //   ),
               SizedBox.fromSize(
                 size: Size(70, 70),
                 child: ClipOval(
@@ -135,9 +150,9 @@ class _MePageState extends State<MePage> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(),
-              ),
+            //   Expanded(
+            //     child: Container(),
+            //   ),
               SizedBox.fromSize(
                 size: Size(70, 70),
                 child: ClipOval(
@@ -157,9 +172,9 @@ class _MePageState extends State<MePage> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(),
-              ),
+            //   Expanded(
+            //     child: Container(),
+            //   ),
             ],
           ),
         ),
