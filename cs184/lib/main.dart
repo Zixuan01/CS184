@@ -1,4 +1,5 @@
 import 'package:cs184/detail_page/detail_page.dart';
+import 'package:cs184/me_page/me_page.dart';
 import 'package:flutter/material.dart';
 
 import 'main_page/main_page.dart';

@@ -1,4 +1,5 @@
 import 'package:cs184/detail_page/detail_page.dart';
+import 'package:cs184/me_page/me_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -164,7 +165,10 @@ class _MainPageState extends State<MainPage> {
                       child: Material(
                         color: Colors.amberAccent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const MePage()));
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
