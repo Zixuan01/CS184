@@ -215,29 +215,6 @@ class _MePageState extends State<MePage> {
       body: Center(
         child: widget_options.elementAt(_selected_index),
       ),
-    //   bottomNavigationBar: BottomNavigationBar(
-    //     selectedItemColor: Colors.amber,
-    //     elevation: 0,
-    //     items: const <BottomNavigationBarItem>[
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.insert_drive_file),
-    //         label: 'Detail',
-    //         backgroundColor: Colors.red,
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.pie_chart),
-    //         label: 'Statistic',
-    //         backgroundColor: Colors.red,
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.account_balance_wallet_rounded),
-    //         label: 'Assets',
-    //         backgroundColor: Colors.red,
-    //       ),
-    //     ],
-    //     currentIndex: _selected_index,
-    //     onTap: _onItemTapped,
-    //   ),
     );
   }
 }
