@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "980676340958",
+    "firebase_url": "https://cs184-final-default-rtdb.firebaseio.com",
+    "project_id": "cs184-final",
+    "storage_bucket": "cs184-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980676340958:android:97640ed7725f988b4aa64f",
+        "android_client_info": {
+          "package_name": "com.example.cs184"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980676340958-69mr3ht3tpo7t5mvkcv1sco5nq3c2e7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg9IcP06apnQ-k3rwoUDopKS-H6MsaAvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980676340958-69mr3ht3tpo7t5mvkcv1sco5nq3c2e7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
