@@ -1,4 +1,7 @@
 import 'package:cs184/detail_page/detail_page.dart';
+import 'package:cs184/me_page/me_page.dart';
+import 'package:cs184/bill_page/bill_page.dart';
+import 'package:cs184/save_page/save_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -122,7 +125,10 @@ class _MainPageState extends State<MainPage> {
                       child: Material(
                         color: Colors.amberAccent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const BillPage()));
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
@@ -143,7 +149,10 @@ class _MainPageState extends State<MainPage> {
                       child: Material(
                         color: Colors.amberAccent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                             Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const SavePage()));
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
@@ -164,7 +173,10 @@ class _MainPageState extends State<MainPage> {
                       child: Material(
                         color: Colors.amberAccent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const MePage()));
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
