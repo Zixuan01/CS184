@@ -95,7 +95,7 @@ class _MainPageState extends State<MainPage> {
                     size: const Size(60, 60),
                     child: ClipOval(
                       child: Material(
-                        color: Colors.amberAccent,
+                        color: Color.fromARGB(114, 238, 230, 201),
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
@@ -123,7 +123,7 @@ class _MainPageState extends State<MainPage> {
                     size: const Size(60, 60),
                     child: ClipOval(
                       child: Material(
-                        color: Colors.amberAccent,
+                        color: Color.fromARGB(114, 238, 230, 201),
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
@@ -147,7 +147,7 @@ class _MainPageState extends State<MainPage> {
                     size: const Size(60, 60),
                     child: ClipOval(
                       child: Material(
-                        color: Colors.amberAccent,
+                        color: Color.fromARGB(114, 238, 230, 201),
                         child: InkWell(
                           onTap: () {
                              Navigator.of(context).push(MaterialPageRoute(
@@ -171,7 +171,7 @@ class _MainPageState extends State<MainPage> {
                     size: const Size(60, 60),
                     child: ClipOval(
                       child: Material(
-                        color: Colors.amberAccent,
+                        color: Color.fromARGB(114, 238, 230, 201),
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(

@@ -99,8 +99,6 @@ class _BillPageState extends State<BillPage> {
             child: Container(
               color: Colors.white,
               child: Table(
-                // border: TableBorder(horizontalInside: BorderSide(width: 1, color: Colors.black, style: BorderStyle.solid)),
-                // border: TableBorder.all(width: 1.0, color: Colors.black),
                 border: TableBorder.symmetric(
                   outside: const BorderSide(width: 1, color: Colors.black, style: BorderStyle.solid),
                   inside: BorderSide.none
@@ -201,7 +199,6 @@ class _BillPageState extends State<BillPage> {
 
   void init_widgets() {
     widget_options.add(detail);
-    // widget_options.add(statictic);
   }
 
   @override
@@ -215,7 +212,6 @@ class _BillPageState extends State<BillPage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
-          // centerTitle: false,
           title: Text(
             "${DateFormat.y().format(DateTime.now())} Bill",
             textAlign: TextAlign.center,
