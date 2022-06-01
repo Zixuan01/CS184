@@ -150,7 +150,7 @@ class _MainPageState extends State<MainPage> {
                         color: Colors.amberAccent,
                         child: InkWell(
                           onTap: () {
-                             Navigator.of(context).push(MaterialPageRoute(
+                            Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const SavePage()));
                           },
                           child: Column(
@@ -174,8 +174,7 @@ class _MainPageState extends State<MainPage> {
                         color: Colors.amberAccent,
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const MePage()));
+                            Navigator.of(context).pushNamed('/me_page');
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
