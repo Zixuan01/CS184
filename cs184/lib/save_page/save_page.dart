@@ -24,49 +24,6 @@ class _SavePageState extends State<SavePage> {
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Column(
       children: [
-        /*Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                children: [
-                  const Text(
-                    "Saving",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: Row(
-                      children: const [
-                        Text(
-                          "Expense",
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: const [
-                      Text(
-                        "Income",
-                        style: TextStyle(
-                          fontSize: 22,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        */
         Padding(
           padding: const EdgeInsets.only(top: 36.0),
           child: Row(
@@ -78,10 +35,6 @@ class _SavePageState extends State<SavePage> {
                 child: Container(),
               ),
               Container(
-                  /*decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 2),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(30))),*/
                   )
             ],
           ),
@@ -90,9 +43,6 @@ class _SavePageState extends State<SavePage> {
           padding: const EdgeInsets.symmetric(vertical: 20.0),
           child: Container(
             width: double.infinity,
-            /*decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Color.fromARGB(0, 0, 0, 0)),
-            ),*/
            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -115,9 +65,6 @@ class _SavePageState extends State<SavePage> {
                   ),
                 ),
               ),
-            //   Expanded(
-            //     child: Container(),
-            //   ),
               SizedBox.fromSize(
                 size: Size(70, 70),
                 child: ClipOval(
@@ -137,9 +84,6 @@ class _SavePageState extends State<SavePage> {
                   ),
                 ),
               ),
-            //   Expanded(
-            //     child: Container(),
-            //   ),
               SizedBox.fromSize(
                 size: Size(70, 70),
                 child: ClipOval(
@@ -159,9 +103,6 @@ class _SavePageState extends State<SavePage> {
                   ),
                 ),
               ),
-            //   Expanded(
-            //     child: Container(),
-            //   ),
             ],
           ),
           ),
@@ -176,19 +117,6 @@ class _SavePageState extends State<SavePage> {
               Expanded(
                 child: Container(),
               ),
-              /*Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 2),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(30))),
-                 child: IconButton(
-                      alignment: Alignment.center,
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.add,
-                        color: Colors.black,
-                        size: 30,
-                      )))*/
             ],
           ),
         ),
@@ -223,19 +151,6 @@ class _SavePageState extends State<SavePage> {
               Expanded(
                 child: Container(),
               ),
-              /*Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 2),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(30))),
-                  child: IconButton(
-                      alignment: Alignment.center,
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.add,
-                        color: Colors.black,
-                        size: 30,
-                      )))*/
             ],
           ),
         ),
