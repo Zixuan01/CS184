@@ -4,13 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 
-enum Sky { midnight, viridian, cerulean }
-
-Map<Sky, Color> skyColors = <Sky, Color>{
-  Sky.midnight: const Color(0xff191970),
-  Sky.viridian: const Color(0xff40826d),
-  Sky.cerulean: const Color(0xff007ba7),
-};
+enum Sky { expense, income }
 
 void main() => runApp(const AddPage());
 
@@ -26,13 +20,11 @@ class _AddPageState extends State<AddPage> {
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
-  static const String _title = 'CupertinoSlidingSegmentedControl Sample';
 
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      title: _title,
-      home: SegmentedControlSample(),
+      home: AddControl(),
     );
   }
 
@@ -43,25 +35,39 @@ class _AddPageState extends State<AddPage> {
   }
 }
 
-class SegmentedControlSample extends StatefulWidget {
-  const SegmentedControlSample({Key? key}) : super(key: key);
+class AddControl extends StatefulWidget {
+  const AddControl({Key? key}) : super(key: key);
 
   @override
-  State<SegmentedControlSample> createState() => _SegmentedControlSampleState();
+  State<AddControl> createState() => _AddControlState();
 }
 
-class _SegmentedControlSampleState extends State<SegmentedControlSample> {
-  Sky _selectedSegment = Sky.midnight;
+class _AddControlState extends State<AddControl> {
+  Sky _selectedSegment = Sky.expense;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: skyColors[_selectedSegment],
+      backgroundColor: Colors.white,
       navigationBar: CupertinoNavigationBar(
-        // This Cupertino segmented control has the enum "Sky" as the type.
+        backgroundColor: Colors.black,
+        padding: EdgeInsetsDirectional.all(5.0),
+        // border: Border(bottom: BorderSide(width: 10.0)),
+        
+        leading: Material(
+          color: Colors.black,
+          child: IconButton(
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.white,
+        ))),
+
         middle: CupertinoSlidingSegmentedControl<Sky>(
-          backgroundColor: CupertinoColors.systemGrey2,
-          thumbColor: skyColors[_selectedSegment]!,
+          backgroundColor: CupertinoColors.systemGrey3,
+          thumbColor: CupertinoColors.systemGrey,
           // This represents the currently selected segmented control.
           groupValue: _selectedSegment,
           // Callback that sets the selected segmented control.
@@ -73,24 +79,17 @@ class _SegmentedControlSampleState extends State<SegmentedControlSample> {
             }
           },
           children: const <Sky, Widget>{
-            Sky.midnight: Padding(
+            Sky.expense: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Midnight',
+                'Expense',
                 style: TextStyle(color: CupertinoColors.white),
               ),
             ),
-            Sky.viridian: Padding(
+            Sky.income: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Viridian',
-                style: TextStyle(color: CupertinoColors.white),
-              ),
-            ),
-            Sky.cerulean: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'Cerulean',
+                'Income',
                 style: TextStyle(color: CupertinoColors.white),
               ),
             ),
@@ -100,7 +99,7 @@ class _SegmentedControlSampleState extends State<SegmentedControlSample> {
       child: Center(
         child: Text(
           'Selected Segment: ${_selectedSegment.name}',
-          style: const TextStyle(color: CupertinoColors.white),
+          style: const TextStyle(color: Colors.black),
         ),
       ),
     );
