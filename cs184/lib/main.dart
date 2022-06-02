@@ -1,3 +1,4 @@
+import 'package:cs184/add_page/add_page.dart';
 import 'package:cs184/detail_page/detail_page.dart';
 import 'package:cs184/me_page/me_page.dart';
 import 'package:cs184/bill_page/bill_page.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         '/main_page': (context) => const MainPage(),
         '/detail_page': (context) => const DetailPage(),
         '/me_page': (context) => const MePage(),
+        '/bill_page': (context) => const BillPage(),
+        '/save_page': (context) => const SavePage(),
+        '/add_page':  (context) => const AddPage(),
       },
     );
   }

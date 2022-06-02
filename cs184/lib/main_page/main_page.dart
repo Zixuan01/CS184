@@ -79,7 +79,8 @@ class _MainPageState extends State<MainPage> {
                           const BorderRadius.all(Radius.circular(30))),
                   child: IconButton(
                       alignment: Alignment.center,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/add_page');},
                       icon: const Icon(
                         Icons.add,
                         size: 30,
