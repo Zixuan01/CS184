@@ -103,7 +103,13 @@ class _AddControlState extends State<AddControl> {
           style: const TextStyle(color: Colors.black),
         ),*/
         padding: const EdgeInsets.symmetric(vertical: 30.0),
-        child: Row(
+        child:
+        Column(
+          children: [
+          Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: 
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
               SizedBox.fromSize(
@@ -184,7 +190,180 @@ class _AddControlState extends State<AddControl> {
               ),
             ],
            ),
-      
+          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.sports), // <-- Icon
+                          Text("Sport",  style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.videogame_asset), // <-- Icon
+                          Text("Game", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.phone), // <-- Icon
+                          Text("Phone", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.local_hospital_rounded), // <-- Icon
+                          Text("Health", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+           ),
+          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.favorite), // <-- Icon
+                          Text("Makeup", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.house_rounded), // <-- Icon
+                          Text("House",  style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.book), // <-- Icon
+                          Text("Study", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.people), // <-- Icon
+                          Text("Network", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+           ),
+          ),
+          
+          ],
+        ),
         ),
     );
   }
