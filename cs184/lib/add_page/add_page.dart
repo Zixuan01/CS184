@@ -96,12 +96,96 @@ class _AddControlState extends State<AddControl> {
           },
         ),
       ),
-      child: Center(
-        child: Text(
+      
+      child: Container(
+        /*child: Text(
           'Selected Segment: ${_selectedSegment.name}',
           style: const TextStyle(color: Colors.black),
+        ),*/
+        padding: const EdgeInsets.symmetric(vertical: 30.0),
+        child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.rice_bowl), // <-- Icon
+                          Text("Food", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.shopping_bag), // <-- Icon
+                          Text("shop",  style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.emoji_transportation), // <-- Icon
+                          Text("Traffic", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green, 
+                      onTap: () {}, 
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.cake), // <-- Icon
+                          Text("Snack", style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+           ),
+      
         ),
-      ),
     );
   }
 }
