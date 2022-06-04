@@ -1,6 +1,8 @@
 import 'package:cs184/add_page/add_page.dart';
 import 'package:cs184/detail_page/detail_page.dart';
 import 'package:cs184/me_page/me_page.dart';
+import 'package:cs184/me_page/wish_list.dart';
+import 'package:cs184/me_page/reminder.dart';
 import 'package:cs184/bill_page/bill_page.dart';
 import 'package:cs184/save_page/save_page.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/bill_page': (context) => const BillPage(),
         '/save_page': (context) => const SavePage(),
         '/add_page':  (context) => const AddPage(),
+        '/wishlist': (context) => const WishListPage(),
+        '/reminder': (context) => const ReminderPage(),
       },
     );
   }
