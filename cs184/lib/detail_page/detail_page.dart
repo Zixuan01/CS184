@@ -177,11 +177,122 @@ class _DetailPageState extends State<DetailPage> {
       ),
     ]),
   );
+
+  Widget asset = Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 1.0, color: Colors.black),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                children: [
+                  const Text(
+                    "Net Asset",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Row(
+                      children: const [
+                        Text(
+                          "Total Asset",
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: const [
+                      Text(
+                        "Negative Asset",
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            children: [
+              const Text("Account",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: Container(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    size: 30,
+                  ),
+                  alignment: Alignment.centerRight,
+                ),
+              ),
+              Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
+                  child: IconButton(
+                      alignment: Alignment.center,
+                      onPressed: () {
+                        // Navigator.of(context).pushNamed('/add_page');
+                      },
+                      icon: const Icon(
+                        Icons.add,
+                        color: Colors.black,
+                        size: 30,
+                      )))
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20.0),
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border.all(width: 1.0, color: Colors.black),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: const Text(
+                      "temp",
+                      style: TextStyle(fontSize: 80),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    ),
+  );
   List<Widget> widget_options = [];
 
   void init_widgets() {
     widget_options.add(detail);
     widget_options.add(statictic);
+    widget_options.add(asset);
   }
 
   @override
