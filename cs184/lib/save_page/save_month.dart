@@ -140,7 +140,7 @@ class _SavemonthPageState extends State<SavemonthPage> {
                 padding: const EdgeInsets.only(top: 36.0),
                 child: Row(
                   children: [
-                    const Text("Start Amount",
+                    const Text("Monthly Amount",
                         textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(

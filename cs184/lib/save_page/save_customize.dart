@@ -140,7 +140,7 @@ class _SavecustomizePageState extends State<SavecustomizePage> {
                 padding: const EdgeInsets.only(top: 36.0),
                 child: Row(
                   children: [
-                    const Text("Start Amount",
+                    const Text("Daily Amount",
                         textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(

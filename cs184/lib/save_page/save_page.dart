@@ -61,7 +61,7 @@ class _SavePageState extends State<SavePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox.fromSize(
-                      size: Size(70, 70),
+                      size: Size(90, 90),
                       child: ClipOval(
                         child: Material(
                           color: Color.fromARGB(114, 238, 230, 201),
@@ -74,49 +74,7 @@ class _SavePageState extends State<SavePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Icon(Icons.calendar_today), // <-- Icon
-                                Text("Daily", style: TextStyle(fontSize: 13)), // <-- Text
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/save_monthly');
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.calendar_month), // <-- Icon
-                                Text("Monthly",  style: TextStyle(fontSize: 13)), // <-- Text
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/save_customize');
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.edit_note_rounded), // <-- Icon
-                                Text("Customize", style: TextStyle(fontSize: 13)), // <-- Text
+                                Text("Daily", style: TextStyle(fontSize: 15)), // <-- Text
                               ],
                             ),
                           ),
@@ -128,7 +86,7 @@ class _SavePageState extends State<SavePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 36.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Row(
                   children: [
                     const Text("In Progress",
