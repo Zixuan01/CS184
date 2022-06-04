@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/cupertino.dart';
 
 class ReminderPage extends StatefulWidget {
   const ReminderPage({Key? key}) : super(key: key);
@@ -8,9 +9,9 @@ class ReminderPage extends StatefulWidget {
 }
 
 class _ReminderPageState extends State<ReminderPage> {
-    // var width = MediaQuery.of(context).size.width;
-    // var height = MediaQuery.of(context).size.height;
   int _selected_index = 0;
+  DateTime time = DateTime.now();
+  String notifText = "keep track of ur shit";
   static const option_style = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
@@ -22,12 +23,32 @@ class _ReminderPageState extends State<ReminderPage> {
     });
   }
 
+  void _showDialog(Widget child) {
+    showCupertinoModalPopup<void>(
+        context: context,
+        builder: (BuildContext context) => Container(
+              height: 216,
+              padding: const EdgeInsets.only(top: 6.0),
+              // The Bottom margin is provided to align the popup above the system navigation bar.
+              margin: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
+              // Provide a background color for the popup.
+              color: CupertinoColors.systemBackground.resolveFrom(context),
+              // Use a SafeArea widget to avoid system overlaps.
+              child: SafeArea(
+                top: false,
+                child: child,
+              ),
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text(
+          title: const Text(
             "Reminder",
             textAlign: TextAlign.center,
           ),
@@ -55,8 +76,33 @@ class _ReminderPageState extends State<ReminderPage> {
                       child: Container(),
                     ),
                     Container(
-                        child:
-                          Text("temp"),
+                      child: _DatePickerItem(
+                        children: <Widget>[
+                          CupertinoButton(
+                            borderRadius: BorderRadius.zero,
+                            // Display a CupertinoDatePicker in time picker mode.
+                            onPressed: () => _showDialog(
+                              CupertinoDatePicker(
+                                initialDateTime: time,
+                                mode: CupertinoDatePickerMode.time,
+                                use24hFormat: true,
+                                // This is called when the user changes the time.
+                                onDateTimeChanged: (DateTime newTime) {
+                                  setState(() => time = newTime);
+                                },
+                              ),
+                            ),
+                            // In this example, the time value is formatted manually. You can use intl package to
+                            // format the value based on the user's locale settings.
+                            child: Text(
+                              '${time.hour}:${time.minute}',
+                              style: const TextStyle(
+                                fontSize: 22.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       )
                   ],
                 ),
@@ -76,11 +122,54 @@ class _ReminderPageState extends State<ReminderPage> {
                   decoration: BoxDecoration(
                     border: Border.all(width: 1.0, color: Colors.black),
                   ),
-                  child: Text("keep track of yo money otherwis ur gonna get ur ass kicked"),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Customize your notification message',
+                    ),
+                    keyboardType: TextInputType.text,
+                    maxLines: 5,
+                    onChanged: (value) {
+                      setState(() {
+                        notifText = value;
+                      });
+                    },
+                  )
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _DatePickerItem extends StatelessWidget {
+  const _DatePickerItem({required this.children});
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: CupertinoColors.inactiveGray,
+            width: 0.0,
+          ),
+          bottom: BorderSide(
+            color: CupertinoColors.inactiveGray,
+            width: 0.0,
+          ),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: children,
         ),
       ),
     );

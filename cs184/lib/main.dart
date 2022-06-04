@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CS 184 Final Project',
-      initialRoute: '/login',
+      initialRoute: '/main_page',
       routes: {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignUpPage(),

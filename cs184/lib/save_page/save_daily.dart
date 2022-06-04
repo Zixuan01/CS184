@@ -76,24 +76,24 @@ class _SavedailyPageState extends State<SavedailyPage> {
                 ),
               ),
               Padding(
-          padding: const EdgeInsets.only(top: 10.0),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                children: const [
-                  Text(
-                    "Daily saving plan is to set up a daily saving goal for your account and calculate the total amount of money you will save.",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                padding: const EdgeInsets.only(top: 10.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.0, color: Colors.black),
                   ),
-                ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Column(
+                      children: const [
+                        Text(
+                          "Daily saving plan is to set up a daily saving goal for your account and calculate the total amount of money you will save.",
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Row(

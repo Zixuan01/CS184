@@ -27,7 +27,7 @@ class _WishListPageState extends State<WishListPage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text(
+          title: const Text(
             "My Wish List",
             textAlign: TextAlign.center,
           ),
@@ -55,18 +55,25 @@ class _WishListPageState extends State<WishListPage> {
                       child: Container(),
                     ),
                     Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 2),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(30))),
-                        child: IconButton(
-                            alignment: Alignment.center,
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.add,
-                              color: Colors.black,
-                              size: 30,
-                            )))
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 2),
+                        borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
+                      child: IconButton(
+                        alignment: Alignment.center,
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) => _buildPopupDialog(context),
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.add,
+                          color: Colors.black,
+                          size: 30,
+                        )
+                      )
+                    )
                   ],
                 ),
               ),
@@ -76,4 +83,64 @@ class _WishListPageState extends State<WishListPage> {
       ),
     );
   }
+}
+
+Widget _buildPopupDialog(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Add item'),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 1.0, color: Colors.black),
+            ),
+            child: TextField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Item name',
+              ),
+              keyboardType: TextInputType.text,
+              onChanged: (value) {
+                // setState(() {
+                //   notifText = value;
+                // });
+              },
+            )
+          ),
+        ),
+        Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.0, color: Colors.black),
+              ),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Price',
+                ),
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  // setState(() {
+                  //   notifText = value;
+                  // });
+                },
+              )
+            ),
+        ),
+      ],
+    ),
+    actions: <Widget>[
+      TextButton(
+        onPressed: () {
+        
+        },
+        child: const Text("Add", style: TextStyle(fontSize: 16))
+      ),
+    ],
+  );
 }
