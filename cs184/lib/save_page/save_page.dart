@@ -67,7 +67,9 @@ class _SavePageState extends State<SavePage> {
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
                             splashColor: Colors.green, 
-                            onTap: () {}, 
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/save_daily');
+                            }, 
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -86,7 +88,9 @@ class _SavePageState extends State<SavePage> {
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
                             splashColor: Colors.green, 
-                            onTap: () {}, 
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/save_monthly');
+                            }, 
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -105,7 +109,9 @@ class _SavePageState extends State<SavePage> {
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
                             splashColor: Colors.green, 
-                            onTap: () {}, 
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/save_customize');
+                            }, 
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
