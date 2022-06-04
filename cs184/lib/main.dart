@@ -11,6 +11,7 @@ import 'package:cs184/save_page/save_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
 
 import 'login_page/login_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'CS 184 Final Project',
       initialRoute: '/main_page',
       routes: {
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         '/me_page': (context) => const MePage(),
         '/bill_page': (context) => const BillPage(),
         '/save_page': (context) => const SavePage(),
-        '/add_page':  (context) => const AddPage(),
+        '/add_page': (context) => const AddPage(),
         '/wishlist': (context) => const WishListPage(),
         '/reminder': (context) => const ReminderPage(),
         '/save_daily': (context) => const SavedailyPage(),

@@ -56,7 +56,8 @@ class _BillPageState extends State<BillPage> {
                       children: [
                         const Text(
                           "Yearly Balance",
-                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -92,121 +93,155 @@ class _BillPageState extends State<BillPage> {
                   children: [
                     const Text("Bill Statement",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 2),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(30))),
-                        child: IconButton(
-                            alignment: Alignment.center,
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.add,
-                              color: Colors.black,
-                              size: 30,
-                            )))
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: Container(
-                    color: Colors.white,
-                    child: Table(
-                      border: TableBorder.symmetric(
-                        outside: const BorderSide(width: 1, color: Colors.black, style: BorderStyle.solid),
-                        inside: BorderSide.none
-                      ),
-                    
-                      children: [
-                        TableRow(
-                          decoration: BoxDecoration(color: Color.fromARGB(114, 238, 230, 201)),
-                          
+                child: Container(
+                  color: Colors.white,
+                  child: Table(
+                    border: TableBorder.symmetric(
+                        outside: const BorderSide(
+                            width: 1,
+                            color: Colors.black,
+                            style: BorderStyle.solid),
+                        inside: BorderSide.none),
+                    children: [
+                      TableRow(
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(114, 238, 230, 201)),
                           children: [
-                          Text("Month", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("Expense", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("Income", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("Balance", style: TextStyle(fontWeight: FontWeight.bold),),
-                        ]),
-                        TableRow(children: [
-                          Text("Jan", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Feb", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Mar", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Apr", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("May", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Jun", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Jul", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Aug", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Sep", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Oct", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Nov", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                        TableRow(children: [
-                          Text("Dec", style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("temp"),
-                          Text("temp"),
-                          Text("temp"),
-                        ]),
-                      ],
-              ),
-            // )
+                            Text(
+                              "Month",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Expense",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Income",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Balance",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ]),
+                      TableRow(children: [
+                        Text(
+                          "Jan",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Feb",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Mar",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Apr",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "May",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Jun",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Jul",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Aug",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Sep",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Oct",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Nov",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                      TableRow(children: [
+                        Text(
+                          "Dec",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text("temp"),
+                        Text("temp"),
+                        Text("temp"),
+                      ]),
+                    ],
+                  ),
+                  // )
                 ),
               )
             ],

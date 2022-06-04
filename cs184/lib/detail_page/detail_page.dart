@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class DetailPage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: IconButton(
                       alignment: Alignment.center,
                       onPressed: () {
-                        // Navigator.of(context).pushNamed('/add_page');
+                        Get.toNamed('/add_page');
                       },
                       icon: const Icon(
                         Icons.add,
