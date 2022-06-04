@@ -254,7 +254,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: IconButton(
                       alignment: Alignment.center,
                       onPressed: () {
-                        // Navigator.of(context).pushNamed('/add_page');
+                        Get.toNamed('/asset_page');
                       },
                       icon: const Icon(
                         Icons.add,

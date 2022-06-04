@@ -1,3 +1,4 @@
+import 'package:cs184/Asset_page/Asset_page.dart';
 import 'package:cs184/add_page/add_page.dart';
 import 'package:cs184/detail_page/detail_page.dart';
 import 'package:cs184/me_page/me_page.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/save_daily': (context) => const SavedailyPage(),
         '/save_monthly': (context) => const SavemonthPage(),
         '/save_customize': (context) => const SavecustomizePage(),
+        '/asset_page': (context) => const AssetPage(),
       },
     );
   }
