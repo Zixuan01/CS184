@@ -589,6 +589,28 @@ class _AddControlState extends State<AddControl> {
             ],
           ),
         ),
+        Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Enter amount',
+                              ),
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) {
+                                //setState(() {
+                                //  _amount = int.parse(value);
+                                //});
+                              },
+                            )
+
+                          ],
+                        ),
+                      ),
+        ),
       ],
     ),
   );
