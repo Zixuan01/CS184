@@ -2,6 +2,8 @@ import 'package:cs184/detail_page/detail_page.dart';
 import 'package:cs184/me_page/me_page.dart';
 import 'package:cs184/bill_page/bill_page.dart';
 import 'package:cs184/save_page/save_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -12,8 +14,16 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  DatabaseReference id = FirebaseDatabase.instance.ref(
+      'id/' + FirebaseAuth.instance.currentUser!.uid.toString() + '/email');
+
   @override
   Widget build(BuildContext context) {
+    // print(2);
+    id.onValue.listen((event) {
+      String email = event.snapshot.value.toString();
+      print(email);
+    });
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -39,7 +49,7 @@ class _MainPageState extends State<MainPage> {
                   border: Border.all(color: Colors.black, width: 1),
                 ),
                 child: const Text(
-                  "Temp",
+                  "temp",
                   style: TextStyle(fontSize: 36),
                 ),
               ),
