@@ -25,6 +25,10 @@ class _SavePageState extends State<SavePage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
+          title: const Text(
+            "Saving Plans",
+            textAlign: TextAlign.center,
+          ),
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -38,53 +42,6 @@ class _SavePageState extends State<SavePage> {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 36.0),
-                child: Row(
-                  children: [
-                    const Text("Saving Plans",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    Container(
-                        )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox.fromSize(
-                      size: Size(90, 90),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/save_daily');
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.calendar_today), // <-- Icon
-                                Text("Daily", style: TextStyle(fontSize: 15)), // <-- Text
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                ),
-              ),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Row(
@@ -152,7 +109,39 @@ class _SavePageState extends State<SavePage> {
                     ),
                   ),
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Container(
+                  width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox.fromSize(
+                      size: Size(300, 60),
+                      child: ClipRect(
+                        child: Material(
+                          color: Color.fromARGB(114, 238, 230, 201),
+                          child: InkWell(
+                            splashColor: Colors.green, 
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/save_daily');
+                            }, 
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.add_sharp), // <-- Icon
+                                Text("Create New Saving Plan", style: TextStyle(fontSize: 20)), // <-- Text
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                ),
+              ),
             ],
           ),
         ),
