@@ -287,6 +287,71 @@ class _AddPageState extends State<AddPage> {
             ],
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+      child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter amount',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
+                    ),
+                  )),
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter notes',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
+                    ),
+                  )),
+              Padding(
+                padding: EdgeInsets.only(top: 40.0),
+                child: SizedBox.fromSize(
+                  size: Size(300, 60),
+                  child: ClipRect(
+                    child: Material(
+                      color: Color.fromARGB(114, 238, 230, 201),
+                      child: InkWell(
+                        splashColor: Colors.green, 
+                        onTap: () {
+                          // Navigator.of(context).pushNamed('/save_daily');
+                        }, 
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(Icons.add_sharp), // <-- Icon
+                            Text("Add New Record", style: TextStyle(fontSize: 20)), // <-- Text
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          ),
+        )
       ],
     ),
   );
@@ -559,6 +624,71 @@ class _AddPageState extends State<AddPage> {
             ],
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+      child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter amount',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
+                    ),
+                  )),
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter notes',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
+                    ),
+                  )),
+              Padding(
+                padding: EdgeInsets.only(top: 40.0),
+                child: SizedBox.fromSize(
+                  size: Size(300, 60),
+                  child: ClipRect(
+                    child: Material(
+                      color: Color.fromARGB(114, 238, 230, 201),
+                      child: InkWell(
+                        splashColor: Colors.green, 
+                        onTap: () {
+                          // Navigator.of(context).pushNamed('/save_daily');
+                        }, 
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(Icons.add_sharp), // <-- Icon
+                            Text("Add New Record", style: TextStyle(fontSize: 20)), // <-- Text
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          ),
+        )
       ],
     ),
   );
@@ -618,24 +748,9 @@ class _AddPageState extends State<AddPage> {
           child: Column(
             children: [
               _selectedSegment == Sky.expense ? expanse : income,
-              Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: Card(
-                    child: TextField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Enter amount',
-                      ),
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        //setState(() {
-                        //  _amount = int.parse(value);
-                        //});
-                      },
-                    ),
-                  )),
             ],
           ),
-        ));
+        )
+        );
   }
 }

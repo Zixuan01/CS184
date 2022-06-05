@@ -146,110 +146,80 @@ class _AssetPageState extends State<AssetPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 36.0),
-                child: Row(
-                  children: [
-                    const Text("Balance",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter Account Name',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
                     ),
-                  ],
-                ),
-              ),
+                  )),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: const Text(
-                            "temp",
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        )
-                      ],
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter Balance',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
                     ),
-                  ),
-                ),
-              ),
+                  )),
               Padding(
-                padding: const EdgeInsets.only(top: 36.0),
-                child: Row(
-                  children: [
-                    const Text("Account Name",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Card(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter notes',
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        //setState(() {
+                        //  _amount = int.parse(value);
+                        //});
+                      },
                     ),
-                  ],
-                ),
-              ),
+                  )),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: const Text(
-                            "temp",
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 36.0),
-                child: Row(
-                  children: [
-                    const Text("Note:",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: const Text(
-                            "temp",
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        )
-                      ],
+                padding: EdgeInsets.only(top: 40.0),
+                child: SizedBox.fromSize(
+                  size: Size(300, 60),
+                  child: ClipRect(
+                    child: Material(
+                      color: Color.fromARGB(114, 238, 230, 201),
+                      child: InkWell(
+                        splashColor: Colors.green, 
+                        onTap: () {
+                          // Navigator.of(context).pushNamed('/save_daily');
+                        }, 
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(Icons.add_sharp), // <-- Icon
+                            Text("Add New Asset", style: TextStyle(fontSize: 20)), // <-- Text
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
               )
             ],
           ),
-        ),
+        )
       ),
     );
   }
