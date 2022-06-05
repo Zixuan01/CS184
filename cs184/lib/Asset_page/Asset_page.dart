@@ -134,7 +134,7 @@ class _AssetPageState extends State<AssetPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Icon(Icons.credit_card), // <-- Icon
-                                Text("Credit Card",  style: TextStyle(fontSize: 13)), // <-- Text
+                                Text("Credit Card",  style: TextStyle(fontSize: 12)), // <-- Text
                               ],
                             ),
                           ),

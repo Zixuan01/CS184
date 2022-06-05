@@ -321,7 +321,277 @@ class _AddControlState extends State<AddControl> {
     ),
   );
 
-  Widget income = Container();
+  Widget income = Container(
+    padding: const EdgeInsets.symmetric(vertical: 30.0),
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.add_card), // <-- Icon
+                          Text("Salary",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.card_membership), // <-- Icon
+                          Text("Award",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.credit_card), // <-- Icon
+                          Text("Interest",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.card_giftcard), // <-- Icon
+                          Text("Gift",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.group_add), // <-- Icon
+                          Text("Dividend",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.trending_up), // <-- Icon
+                          Text("Stocks",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.arrow_back), // <-- Icon
+                          Text("Borrow",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.download), // <-- Icon
+                          Text("Received",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.house), // <-- Icon
+                          Text("Rent",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.child_care), // <-- Icon
+                          Text("Alimony",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.attach_money), // <-- Icon
+                          Text("Fund",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.add), // <-- Icon
+                          Text("Others",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
