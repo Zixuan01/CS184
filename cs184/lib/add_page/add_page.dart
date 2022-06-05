@@ -45,6 +45,284 @@ class AddControl extends StatefulWidget {
 class _AddControlState extends State<AddControl> {
   Sky _selectedSegment = Sky.expense;
 
+  Widget expanse = Container(
+    /*child: Text(
+          'Selected Segment: ${_selectedSegment.name}',
+          style: const TextStyle(color: Colors.black),
+        ),*/
+    padding: const EdgeInsets.symmetric(vertical: 30.0),
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.rice_bowl), // <-- Icon
+                          Text("Food",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.shopping_bag), // <-- Icon
+                          Text("Shop",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.emoji_transportation), // <-- Icon
+                          Text("Traffic",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.cake), // <-- Icon
+                          Text("Snack",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.sports), // <-- Icon
+                          Text("Sport",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.videogame_asset), // <-- Icon
+                          Text("Game",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.phone), // <-- Icon
+                          Text("Phone",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.local_hospital_rounded), // <-- Icon
+                          Text("Health",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.favorite), // <-- Icon
+                          Text("Makeup",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.house_rounded), // <-- Icon
+                          Text("House",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.book), // <-- Icon
+                          Text("Study",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox.fromSize(
+                size: Size(70, 70),
+                child: ClipOval(
+                  child: Material(
+                    color: Color.fromARGB(114, 238, 230, 201),
+                    child: InkWell(
+                      splashColor: Colors.green,
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.people), // <-- Icon
+                          Text("Network",
+                              style: TextStyle(fontSize: 13)), // <-- Text
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+
+  Widget income = Container();
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -53,17 +331,17 @@ class _AddControlState extends State<AddControl> {
         backgroundColor: Colors.black,
         padding: EdgeInsetsDirectional.all(5.0),
         // border: Border(bottom: BorderSide(width: 10.0)),
-        
+
         leading: Material(
-          color: Colors.black,
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true).pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.white,
-        ))),
+            color: Colors.black,
+            child: IconButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true).pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white,
+                ))),
 
         middle: CupertinoSlidingSegmentedControl<Sky>(
           backgroundColor: CupertinoColors.systemGrey3,
@@ -96,275 +374,7 @@ class _AddControlState extends State<AddControl> {
           },
         ),
       ),
-      
-      child: Container(
-        /*child: Text(
-          'Selected Segment: ${_selectedSegment.name}',
-          style: const TextStyle(color: Colors.black),
-        ),*/
-        padding: const EdgeInsets.symmetric(vertical: 30.0),
-        child:
-        Column(
-          children: [
-          Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.rice_bowl), // <-- Icon
-                          Text("Food", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.shopping_bag), // <-- Icon
-                          Text("shop",  style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.emoji_transportation), // <-- Icon
-                          Text("Traffic", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.cake), // <-- Icon
-                          Text("Snack", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-           ),
-          ),
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.sports), // <-- Icon
-                          Text("Sport",  style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.videogame_asset), // <-- Icon
-                          Text("Game", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.phone), // <-- Icon
-                          Text("Phone", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.local_hospital_rounded), // <-- Icon
-                          Text("Health", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-           ),
-          ),
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.favorite), // <-- Icon
-                          Text("Makeup", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.house_rounded), // <-- Icon
-                          Text("House",  style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.book), // <-- Icon
-                          Text("Study", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.people), // <-- Icon
-                          Text("Network", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-           ),
-          ),
-          
-          ],
-        ),
-        ),
+      child: _selectedSegment == Sky.expense ? expanse : income,
     );
   }
 }
