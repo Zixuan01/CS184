@@ -14,16 +14,42 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  DatabaseReference id = FirebaseDatabase.instance.ref(
-      'id/' + FirebaseAuth.instance.currentUser!.uid.toString() + '/email');
+  DatabaseReference id = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/transaction');
+
+  List<Widget> widgets = [];
+  void tmp() async {
+    var data = await id.get();
+    var map = data.value as Map;
+
+    for (var i = 0; i < map.length; i++) {
+      // print(map.values.elementAt(i)['amount']);
+      Widget temp = Container(
+        child: Text(
+          map.values.elementAt(i)['amount'].toString(),
+          style: TextStyle(fontSize: 20),
+        ),
+      );
+      widgets.add(temp);
+    }
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    tmp();
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // print(2);
-    id.onValue.listen((event) {
-      String email = event.snapshot.value.toString();
-      print(email);
-    });
+    // id.onValue.listen((event) {
+    //   String email = event.snapshot.value.toString();
+    //   print(id.child("050402/amount").onValue.listen((event) {
+    //     print(event.snapshot.value);
+    //   }));
+    // });
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -44,15 +70,13 @@ class _MainPageState extends State<MainPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 1),
-                ),
-                child: const Text(
-                  "temp",
-                  style: TextStyle(fontSize: 36),
-                ),
-              ),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
+                  child: Column(
+                    children: widgets,
+                  )),
             ),
             const Padding(
               padding: EdgeInsets.fromLTRB(24, 20, 10, 10),
