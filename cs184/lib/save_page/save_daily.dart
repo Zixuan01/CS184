@@ -47,6 +47,10 @@ class _SavedailyPageState extends State<SavedailyPage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
+          title: const Text(
+            "New Saving Plan",
+            textAlign: TextAlign.center,
+          ),
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -61,41 +65,7 @@ class _SavedailyPageState extends State<SavedailyPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 36.0),
-                child: Row(
-                  children: [
-                    const Text("Saving Plans",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    Container(
-                        )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Column(
-                      children: const [
-                        Text(
-                          "Daily saving plan is to set up a daily saving goal for your account and calculate the total amount of money you will save.",
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 child: Row(
                   children: [
                     const Text("Start date",
@@ -104,53 +74,50 @@ class _SavedailyPageState extends State<SavedailyPage> {
                     Expanded(
                       child: Container(),
                     ),
+                    Container(
+                      width: 186,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1.0, color: Colors.black),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: <Widget>[
+                            _DatePickerItem(
+                              children: <Widget>[
+                                // const Text('Date'),
+                                CupertinoButton(
+                                  // Display a CupertinoDatePicker in date picker mode.
+                                  onPressed: () => _showDialog(
+                                    CupertinoDatePicker(
+                                      initialDateTime: date,
+                                      mode: CupertinoDatePickerMode.date,
+                                      use24hFormat: true,
+                                      // This is called when the user changes the date.
+                                      onDateTimeChanged: (DateTime newDate) {
+                                        setState(() => date = newDate);
+                                      },
+                                    ),
+                                  ),
+                                  // In this example, the date value is formatted manually. You can use intl package
+                                  // to format the value based on user's locale settings.
+                                  child: Text(
+                                    '${date.month}-${date.day}-${date.year}',
+                                    style: const TextStyle(
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        _DatePickerItem(
-                          children: <Widget>[
-                            // const Text('Date'),
-                            CupertinoButton(
-                              // Display a CupertinoDatePicker in date picker mode.
-                              onPressed: () => _showDialog(
-                                CupertinoDatePicker(
-                                  initialDateTime: date,
-                                  mode: CupertinoDatePickerMode.date,
-                                  use24hFormat: true,
-                                  // This is called when the user changes the date.
-                                  onDateTimeChanged: (DateTime newDate) {
-                                    setState(() => date = newDate);
-                                  },
-                                ),
-                              ),
-                              // In this example, the date value is formatted manually. You can use intl package
-                              // to format the value based on user's locale settings.
-                              child: Text(
-                                '${date.month}-${date.day}-${date.year}',
-                                style: const TextStyle(
-                                  fontSize: 22.0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 child: Row(
                   children: [
                     const Text("End date",
@@ -159,137 +126,135 @@ class _SavedailyPageState extends State<SavedailyPage> {
                     Expanded(
                       child: Container(),
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        _DatePickerItem(
+                    Container(
+                      width: 186,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1.0, color: Colors.black),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
                           children: <Widget>[
-                            // const Text('Date'),
-                            CupertinoButton(
-                              // Display a CupertinoDatePicker in date picker mode.
-                              onPressed: () => _showDialog(
-                                CupertinoDatePicker(
-                                  initialDateTime: date,
-                                  mode: CupertinoDatePickerMode.date,
-                                  use24hFormat: true,
-                                  // This is called when the user changes the date.
-                                  onDateTimeChanged: (DateTime newDate) {
-                                    setState(() => date = newDate);
-                                  },
+                            _DatePickerItem(
+                              children: <Widget>[
+                                // const Text('Date'),
+                                CupertinoButton(
+                                  // Display a CupertinoDatePicker in date picker mode.
+                                  onPressed: () => _showDialog(
+                                    CupertinoDatePicker(
+                                      initialDateTime: date,
+                                      mode: CupertinoDatePickerMode.date,
+                                      use24hFormat: true,
+                                      // This is called when the user changes the date.
+                                      onDateTimeChanged: (DateTime newDate) {
+                                        setState(() => date = newDate);
+                                      },
+                                    ),
+                                  ),
+                                  // In this example, the date value is formatted manually. You can use intl package
+                                  // to format the value based on user's locale settings.
+                                  child: Text(
+                                    '${date.month}-${date.day}-${date.year}',
+                                    style: const TextStyle(
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              // In this example, the date value is formatted manually. You can use intl package
-                              // to format the value based on user's locale settings.
-                              child: Text(
-                                '${date.month}-${date.day}-${date.year}',
-                                style: const TextStyle(
-                                  fontSize: 22.0,
-                                ),
-                              ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 5.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 child: Row(
                   children: [
-                    const Text("Daily Amount",
+                    const Text("Daily Budget",
                         textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        TextField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Enter amount',
-                          ),
-                          keyboardType: TextInputType.number,
-                          onChanged: (value) {
-                            setState(() {
-                              _amount = int.parse(value);
-                            });
-                          },
-                        )
+                    Container(
+                      width: 186,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1.0, color: Colors.black),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Enter amount',
+                              ),
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) {
+                                setState(() {
+                                  _amount = int.parse(value);
+                                });
+                              },
+                            )
 
-                      ],
-                    ),
-                  ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 5.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 child: Row(
                   children: [
-                    const Text("Total Amount",
+                    const Text("Total Budget",
                         textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
+                    Container(
+                      width: 186,
+                      decoration: BoxDecoration(
+                      border: Border.all(width: 1.0, color: Colors.black),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: const [
+                            Text(
+                              "temp",
+                              style: TextStyle(fontSize: 26),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.black),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: const [
-                        Text(
-                          "temp",
-                          style: TextStyle(fontSize: 40),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0),
-                child: Container(
-                  width: double.infinity,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 20),
-                        CupertinoButton.filled(
-                          onPressed: () {},
-                          child: const Text('Save'),
+                padding: EdgeInsets.only(top: 40.0),
+                child: SizedBox.fromSize(
+                  size: Size(300, 60),
+                  child: ClipRect(
+                    child: Material(
+                      color: Color.fromARGB(114, 238, 230, 201),
+                      child: InkWell(
+                        splashColor: Colors.green, 
+                        onTap: () {
+                          // Navigator.of(context).pushNamed('/save_daily');
+                        }, 
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(Icons.add_sharp), // <-- Icon
+                            Text("Add New Saving Plan", style: TextStyle(fontSize: 20)), // <-- Text
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
