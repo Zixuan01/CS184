@@ -1,9 +1,12 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:cs184/login_page/sign_up_page.dart';
 import 'package:cs184/main_page/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,6 +14,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  //
+  DatabaseReference fb = FirebaseDatabase.instance.ref("id");
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -90,13 +96,18 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                      onPressed: () {
+                      onPressed: () async {
+                        // await fb.update({"username": "maikeer"});
                         FocusScope.of(context).unfocus();
                         FirebaseAuth.instance
                             .signInWithEmailAndPassword(
                                 email: username, password: password)
-                            .then((signedInUser) {
+                            .then((signedInUser) async {
                           Navigator.of(context).pushNamed('/main_page');
+                          // print(FirebaseAuth.instance.currentUser!.uid);
+                          DatabaseReference id =
+                              fb.child(FirebaseAuth.instance.currentUser!.uid);
+                          await id.update({"email": username});
                         }).catchError((e) {
                           print(e);
 

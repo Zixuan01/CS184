@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 import '../main_page/main_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -10,6 +10,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  DatabaseReference fb = FirebaseDatabase.instance.ref("id");
+
   @override
   Widget build(BuildContext context) {
     var auth = FirebaseAuth.instance;
@@ -103,7 +105,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               content: Text(
                                   'You have logged in with the account you just created'),
                             );
-
+                            // print(FirebaseAuth.instance.currentUser!.uid);
+                            DatabaseReference id = fb
+                                .child(FirebaseAuth.instance.currentUser!.uid);
+                            await id.update({"email": username});
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           }
