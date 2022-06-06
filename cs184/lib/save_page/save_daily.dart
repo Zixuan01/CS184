@@ -10,7 +10,9 @@ class SavedailyPage extends StatefulWidget {
 
 class _SavedailyPageState extends State<SavedailyPage> {
   int _amount = 0;
-  DateTime date = DateTime(2016, 10, 26);
+  static DateTime startdate = DateTime(2016, 10, 26);
+  static DateTime enddate = DateTime(2016, 10, 26);
+  static Duration difference = startdate.difference(enddate);
   int _selected_index = 0;
   static const option_style = TextStyle(
     fontSize: 30,
@@ -89,19 +91,20 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                   // Display a CupertinoDatePicker in date picker mode.
                                   onPressed: () => _showDialog(
                                     CupertinoDatePicker(
-                                      initialDateTime: date,
+                                      initialDateTime: startdate,
                                       mode: CupertinoDatePickerMode.date,
                                       use24hFormat: true,
                                       // This is called when the user changes the date.
                                       onDateTimeChanged: (DateTime newDate) {
-                                        setState(() => date = newDate);
+                                        setState(() => startdate = newDate);
+                                        //startdate = newDate;
                                       },
                                     ),
                                   ),
                                   // In this example, the date value is formatted manually. You can use intl package
                                   // to format the value based on user's locale settings.
                                   child: Text(
-                                    '${date.month}-${date.day}-${date.year}',
+                                    '${startdate.month}-${startdate.day}-${startdate.year}',
                                     style: const TextStyle(
                                       fontSize: 22.0,
                                     ),
@@ -141,19 +144,21 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                   // Display a CupertinoDatePicker in date picker mode.
                                   onPressed: () => _showDialog(
                                     CupertinoDatePicker(
-                                      initialDateTime: date,
+                                      initialDateTime: enddate,
                                       mode: CupertinoDatePickerMode.date,
                                       use24hFormat: true,
                                       // This is called when the user changes the date.
                                       onDateTimeChanged: (DateTime newDate) {
-                                        setState(() => date = newDate);
+                                        setState(() => enddate = newDate);
+                                        // enddate = newDate;
+                                        difference = enddate.difference(startdate);
                                       },
                                     ),
                                   ),
                                   // In this example, the date value is formatted manually. You can use intl package
                                   // to format the value based on user's locale settings.
                                   child: Text(
-                                    '${date.month}-${date.day}-${date.year}',
+                                    '${enddate.month}-${enddate.day}-${enddate.year}',
                                     style: const TextStyle(
                                       fontSize: 22.0,
                                     ),
@@ -223,10 +228,10 @@ class _SavedailyPageState extends State<SavedailyPage> {
                       ),
                       child: SingleChildScrollView(
                         child: Column(
-                          children: const [
+                          children:  [
                             Text(
-                              "temp",
-                              style: TextStyle(fontSize: 26),
+                              "${_amount*difference.inDays}",
+                              style: const TextStyle(fontSize: 26),
                             )
                           ],
                         ),
@@ -266,6 +271,7 @@ class _SavedailyPageState extends State<SavedailyPage> {
     );
   }
 }
+
 
 class _DatePickerItem extends StatelessWidget {
   const _DatePickerItem({required this.children});

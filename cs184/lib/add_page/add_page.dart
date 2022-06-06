@@ -14,6 +14,7 @@ class AddPage extends StatefulWidget {
 
 class _AddPageState extends State<AddPage> {
   Sky _selectedSegment = Sky.expense;
+  static const color_o = Color(0xFFFFC107);
 
   Widget expanse = Container(
     /*child: Text(
@@ -32,10 +33,13 @@ class _AddPageState extends State<AddPage> {
                 size: Size(70, 70),
                 child: ClipOval(
                   child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
+                    // color: Color.fromARGB(114, 238, 230, 201),
+                    color: color_o,
                     child: InkWell(
                       splashColor: Colors.green,
-                      onTap: () {},
+                      onTap: () {
+                        
+                      },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -276,7 +280,7 @@ class _AddPageState extends State<AddPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.people), // <-- Icon
-                          Text("Network",
+                    Text("Network",
                               style: TextStyle(fontSize: 13)), // <-- Text
                         ],
                       ),
