@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class DetailPage extends StatefulWidget {
@@ -94,7 +95,9 @@ class _DetailPageState extends State<DetailPage> {
                           const BorderRadius.all(Radius.circular(30))),
                   child: IconButton(
                       alignment: Alignment.center,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/add_page');
+                      },
                       icon: const Icon(
                         Icons.add,
                         color: Colors.black,
@@ -175,11 +178,122 @@ class _DetailPageState extends State<DetailPage> {
       ),
     ]),
   );
+
+  Widget asset = Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 1.0, color: Colors.black),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                children: [
+                  const Text(
+                    "Net Asset",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Row(
+                      children: const [
+                        Text(
+                          "Total Asset",
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: const [
+                      Text(
+                        "Negative Asset",
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(
+            children: [
+              const Text("Account",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: Container(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    size: 30,
+                  ),
+                  alignment: Alignment.centerRight,
+                ),
+              ),
+              Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
+                  child: IconButton(
+                      alignment: Alignment.center,
+                      onPressed: () {
+                        Get.toNamed('/asset_page');
+                      },
+                      icon: const Icon(
+                        Icons.add,
+                        color: Colors.black,
+                        size: 30,
+                      )))
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20.0),
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border.all(width: 1.0, color: Colors.black),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: const Text(
+                      "temp",
+                      style: TextStyle(fontSize: 80),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    ),
+  );
   List<Widget> widget_options = [];
 
   void init_widgets() {
     widget_options.add(detail);
     widget_options.add(statictic);
+    widget_options.add(asset);
   }
 
   @override
@@ -193,7 +307,7 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
-          centerTitle: false,
+          centerTitle: true,
           title: Text(
             "${DateFormat.yMMM().format(DateTime.now())} Account Detail",
             textAlign: TextAlign.right,
@@ -209,28 +323,28 @@ class _DetailPageState extends State<DetailPage> {
       body: Center(
         child: widget_options.elementAt(_selected_index),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: SizedBox(
+        child:BottomNavigationBar(
         selectedItemColor: Colors.amber,
-        elevation: 0,
+        // elevation: 20,
+        // type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_drive_file),
             label: 'Detail',
-            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.pie_chart),
-            label: 'Statistic',
-            backgroundColor: Colors.red,
+            label: 'Statistics',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_balance_wallet_rounded),
             label: 'Assets',
-            backgroundColor: Colors.red,
           ),
         ],
         currentIndex: _selected_index,
         onTap: _onItemTapped,
+        ),
       ),
     );
   }

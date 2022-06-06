@@ -79,7 +79,8 @@ class _MainPageState extends State<MainPage> {
                           const BorderRadius.all(Radius.circular(30))),
                   child: IconButton(
                       alignment: Alignment.center,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/add_page');},
                       icon: const Icon(
                         Icons.add,
                         size: 30,
@@ -87,7 +88,7 @@ class _MainPageState extends State<MainPage> {
                       ))),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
+              padding: const EdgeInsets.only(top: 40.0, bottom: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -105,13 +106,13 @@ class _MainPageState extends State<MainPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
                               Icon(
-                                Icons.insert_drive_file,
+                                Icons.account_balance_wallet_rounded,
                                 color: Colors.black,
                               ), // <-- Icon
                               Text(
                                 "Detail",
                                 style: TextStyle(
-                                    fontSize: 18, color: Colors.black),
+                                    fontSize: 14, color: Colors.black),
                               ), // <-- Text
                             ],
                           ),
@@ -132,10 +133,10 @@ class _MainPageState extends State<MainPage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
-                              Icon(Icons.insert_drive_file), // <-- Icon
+                              Icon(Icons.monetization_on), // <-- Icon
                               Text(
                                 "Bill",
-                                style: TextStyle(fontSize: 18),
+                                style: TextStyle(fontSize: 14),
                               ), // <-- Text
                             ],
                           ),
@@ -156,10 +157,10 @@ class _MainPageState extends State<MainPage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
-                              Icon(Icons.insert_drive_file), // <-- Icon
+                              Icon(Icons.savings_rounded), // <-- Icon
                               Text(
                                 "Save",
-                                style: TextStyle(fontSize: 18),
+                                style: TextStyle(fontSize: 14),
                               ), // <-- Text
                             ],
                           ),
@@ -179,10 +180,10 @@ class _MainPageState extends State<MainPage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const <Widget>[
-                              Icon(Icons.insert_drive_file), // <-- Icon
+                              Icon(Icons.person), // <-- Icon
                               Text(
                                 "Me",
-                                style: TextStyle(fontSize: 18),
+                                style: TextStyle(fontSize: 14),
                               ), // <-- Text
                             ],
                           ),
