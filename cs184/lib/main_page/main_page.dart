@@ -24,11 +24,63 @@ class _MainPageState extends State<MainPage> {
 
     for (var i = 0; i < map.length; i++) {
       // print(map.values.elementAt(i)['amount']);
-      Widget temp = Container(
-        child: Text(
-          map.values.elementAt(i)['amount'].toString(),
-          style: TextStyle(fontSize: 20),
-        ),
+      Widget temp = Padding(
+        padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+        child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 1),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 10.0, top: 5, bottom: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0),
+                            child: Text(
+                              map.values.elementAt(i)['type'].toString(),
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Text(
+                              map.values.elementAt(i)['date'].toString(),
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.normal),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 10.0, top: 5, bottom: 5),
+                        child: Text(
+                          map.values.elementAt(i)['note'].toString(),
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 10.0, top: 5, bottom: 5),
+                  child: Text(
+                    map.values.elementAt(i)['amount'].toString(),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            )),
       );
       widgets.add(temp);
     }
