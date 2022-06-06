@@ -10,7 +10,7 @@ class ReminderPage extends StatefulWidget {
 
 class _ReminderPageState extends State<ReminderPage> {
   int _selected_index = 0;
-  DateTime time = DateTime.now();
+  DateTime time = DateTime(2016, 5, 4, 4, 20);
   String notifText = "keep track of ur shit";
   static const option_style = TextStyle(
     fontSize: 30,
@@ -118,7 +118,7 @@ class _ReminderPageState extends State<ReminderPage> {
                               fontSize: 26, fontWeight: FontWeight.bold)),
                     )),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(top: 5.0),
                   child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(width: 1.0, color: Colors.black),
@@ -158,11 +158,11 @@ class _DatePickerItem extends StatelessWidget {
       decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: CupertinoColors.inactiveGray,
+            color: Colors.white,
             width: 0.0,
           ),
           bottom: BorderSide(
-            color: CupertinoColors.inactiveGray,
+            color: Colors.white,
             width: 0.0,
           ),
         ),

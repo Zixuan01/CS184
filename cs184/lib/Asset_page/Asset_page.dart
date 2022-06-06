@@ -59,90 +59,86 @@ class _AssetPageState extends State<AssetPage> {
                   width: double.infinity,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.monetization_on), // <-- Icon
-                                Text("Cash", style: TextStyle(fontSize: 13)), // <-- Text
-                              ],
+                    children: [
+                      SizedBox.fromSize(
+                        size: Size(70, 70),
+                        child: ClipOval(
+                          child: Material(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: InkWell( 
+                              onTap: () {
+                              }, 
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.monetization_on), // <-- Icon
+                                  Text("Cash", style: TextStyle(fontSize: 13)), // <-- Text
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.add_card), // <-- Icon
-                                Text("Debit Card",  style: TextStyle(fontSize: 13)), // <-- Text
-                              ],
+                      SizedBox.fromSize(
+                        size: Size(70, 70),
+                        child: ClipOval(
+                          child: Material(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: InkWell(
+                              onTap: () {
+                              }, 
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.add_card), // <-- Icon
+                                  Text("Debit Card",  style: TextStyle(fontSize: 13)), // <-- Text
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.card_giftcard), // <-- Icon
-                                Text("Gift Card", style: TextStyle(fontSize: 13)), // <-- Text
-                              ],
+                      SizedBox.fromSize(
+                        size: Size(70, 70),
+                        child: ClipOval(
+                          child: Material(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: InkWell( 
+                              onTap: () {
+                              }, 
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.card_giftcard), // <-- Icon
+                                  Text("Gift Card", style: TextStyle(fontSize: 13)), // <-- Text
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox.fromSize(
-                      size: Size(70, 70),
-                      child: ClipOval(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
-                            onTap: () {
+                      SizedBox.fromSize(
+                        size: Size(70, 70),
+                        child: ClipOval(
+                          child: Material(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: InkWell( 
+                              onTap: () {
 
-                            }, 
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.credit_card), // <-- Icon
-                                Text("Credit Card",  style: TextStyle(fontSize: 12)), // <-- Text
-                              ],
+                              }, 
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.credit_card), // <-- Icon
+                                  Text("Credit Card",  style: TextStyle(fontSize: 12)), // <-- Text
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                 ),
                 ),
               ),
               Padding(
@@ -153,7 +149,7 @@ class _AssetPageState extends State<AssetPage> {
                         border: OutlineInputBorder(),
                         labelText: 'Enter Account Name',
                       ),
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.text,
                       onChanged: (value) {
                         //setState(() {
                         //  _amount = int.parse(value);
@@ -185,7 +181,8 @@ class _AssetPageState extends State<AssetPage> {
                         border: OutlineInputBorder(),
                         labelText: 'Enter notes',
                       ),
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.text,
+                      maxLines: 2,
                       onChanged: (value) {
                         //setState(() {
                         //  _amount = int.parse(value);
@@ -200,8 +197,7 @@ class _AssetPageState extends State<AssetPage> {
                   child: ClipRect(
                     child: Material(
                       color: Color.fromARGB(114, 238, 230, 201),
-                      child: InkWell(
-                        splashColor: Colors.green, 
+                      child: InkWell( 
                         onTap: () {
                           // Navigator.of(context).pushNamed('/save_daily');
                         }, 

@@ -307,7 +307,7 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
-          centerTitle: false,
+          centerTitle: true,
           title: Text(
             "${DateFormat.yMMM().format(DateTime.now())} Account Detail",
             textAlign: TextAlign.right,
@@ -323,28 +323,28 @@ class _DetailPageState extends State<DetailPage> {
       body: Center(
         child: widget_options.elementAt(_selected_index),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: SizedBox(
+        child:BottomNavigationBar(
         selectedItemColor: Colors.amber,
-        elevation: 0,
+        // elevation: 20,
+        // type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_drive_file),
             label: 'Detail',
-            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.pie_chart),
-            label: 'Statistic',
-            backgroundColor: Colors.red,
+            label: 'Statistics',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_balance_wallet_rounded),
             label: 'Assets',
-            backgroundColor: Colors.red,
           ),
         ],
         currentIndex: _selected_index,
         onTap: _onItemTapped,
+        ),
       ),
     );
   }

@@ -133,7 +133,6 @@ class _MePageState extends State<MePage> {
                         child: Material(
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
-                            splashColor: Colors.green,
                             onTap: () {
                               //  Navigator.of(context).pushNamed('/shoppinglist');
                               Navigator.of(context).push(MaterialPageRoute(
@@ -160,7 +159,6 @@ class _MePageState extends State<MePage> {
                         child: Material(
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
-                            splashColor: Colors.green,
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => const ReminderPage()));
@@ -186,7 +184,6 @@ class _MePageState extends State<MePage> {
                         child: Material(
                           color: Color.fromARGB(114, 238, 230, 201),
                           child: InkWell(
-                            splashColor: Colors.green,
                             onTap: () {
                               FirebaseAuth.instance.signOut();
                               Navigator.of(context).pushNamedAndRemoveUntil(

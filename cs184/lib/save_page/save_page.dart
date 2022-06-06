@@ -122,8 +122,7 @@ class _SavePageState extends State<SavePage> {
                       child: ClipRect(
                         child: Material(
                           color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell(
-                            splashColor: Colors.green, 
+                          child: InkWell( 
                             onTap: () {
                               Navigator.of(context).pushNamed('/save_daily');
                             }, 

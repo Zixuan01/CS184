@@ -9,7 +9,7 @@ class SavedailyPage extends StatefulWidget {
 }
 
 class _SavedailyPageState extends State<SavedailyPage> {
-  int _amount = 0;
+  int _amount = 0, daily_budget = 0;
   static DateTime startdate = DateTime(2016, 10, 26);
   static DateTime enddate = DateTime(2016, 10, 26);
   static Duration difference = startdate.difference(enddate);
@@ -24,6 +24,15 @@ class _SavedailyPageState extends State<SavedailyPage> {
       _selected_index = index;
     });
   }
+
+  TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   void _showDialog(Widget child) {
     showCupertinoModalPopup<void>(
         context: context,
@@ -42,6 +51,10 @@ class _SavedailyPageState extends State<SavedailyPage> {
                 child: child,
               ),
             ));
+  }
+
+  void updateTotal(int val) {
+    _amount = val * difference.inDays;
   }
 
   @override
@@ -97,6 +110,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                       // This is called when the user changes the date.
                                       onDateTimeChanged: (DateTime newDate) {
                                         setState(() => startdate = newDate);
+                                        difference = enddate.difference(startdate);
+                                        updateTotal(daily_budget);
                                         //startdate = newDate;
                                       },
                                     ),
@@ -104,7 +119,7 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                   // In this example, the date value is formatted manually. You can use intl package
                                   // to format the value based on user's locale settings.
                                   child: Text(
-                                    '${startdate.month}-${startdate.day}-${startdate.year}',
+                                    '${startdate.month}/${startdate.day}/${startdate.year}',
                                     style: const TextStyle(
                                       fontSize: 22.0,
                                     ),
@@ -152,13 +167,14 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                         setState(() => enddate = newDate);
                                         // enddate = newDate;
                                         difference = enddate.difference(startdate);
+                                        updateTotal(daily_budget);
                                       },
                                     ),
                                   ),
                                   // In this example, the date value is formatted manually. You can use intl package
                                   // to format the value based on user's locale settings.
                                   child: Text(
-                                    '${enddate.month}-${enddate.day}-${enddate.year}',
+                                    '${enddate.month}/${enddate.day}/${enddate.year}',
                                     style: const TextStyle(
                                       fontSize: 22.0,
                                     ),
@@ -192,14 +208,19 @@ class _SavedailyPageState extends State<SavedailyPage> {
                         child: Column(
                           children: [
                             TextField(
+                              style: TextStyle(fontSize: 22),
+                              textAlign: TextAlign.center,
+                              controller: _controller,
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'Enter amount',
+                                hintText: 'Enter amount',
                               ),
                               keyboardType: TextInputType.number,
                               onChanged: (value) {
                                 setState(() {
-                                  _amount = int.parse(value);
+                                  // _amount = int.parse(value);
+                                  daily_budget = int.parse(value);
+                                  updateTotal(int.parse(value));
                                 });
                               },
                             )
@@ -230,8 +251,9 @@ class _SavedailyPageState extends State<SavedailyPage> {
                         child: Column(
                           children:  [
                             Text(
-                              "${_amount*difference.inDays}",
-                              style: const TextStyle(fontSize: 26),
+                              "${_amount}",
+                              // "${_amount*difference.inDays}", // _amount*difference.inDays
+                              style: const TextStyle(fontSize: 22),
                             )
                           ],
                         ),
@@ -248,7 +270,6 @@ class _SavedailyPageState extends State<SavedailyPage> {
                     child: Material(
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
-                        splashColor: Colors.green, 
                         onTap: () {
                           // Navigator.of(context).pushNamed('/save_daily');
                         }, 

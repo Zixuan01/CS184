@@ -116,19 +116,19 @@ class _BillPageState extends State<BillPage> {
                           children: [
                             Text(
                               "Month",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                             Text(
                               "Expense",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                             Text(
                               "Income",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                             Text(
                               "Balance",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                           ]),
                       TableRow(children: [

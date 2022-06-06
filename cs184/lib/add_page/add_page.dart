@@ -15,6 +15,7 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   Sky _selectedSegment = Sky.expense;
   static const color_o = Color(0xFFFFC107);
+  int _selected_index = -1;
 
   Widget expanse = Container(
     /*child: Text(
@@ -36,9 +37,8 @@ class _AddPageState extends State<AddPage> {
                     // color: Color.fromARGB(114, 238, 230, 201),
                     color: color_o,
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {
-                        
+
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +58,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +77,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +96,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +123,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -146,7 +142,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +161,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -186,7 +180,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -214,7 +207,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -234,7 +226,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -254,7 +245,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -274,7 +264,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -297,7 +286,7 @@ class _AddPageState extends State<AddPage> {
           child: Column(
             children: [
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25),
                   child: Card(
                     child: TextField(
                       decoration: const InputDecoration(
@@ -313,14 +302,15 @@ class _AddPageState extends State<AddPage> {
                     ),
                   )),
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25),
                   child: Card(
                     child: TextField(
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Enter notes',
                       ),
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.text,
+                      maxLines: 2,
                       onChanged: (value) {
                         //setState(() {
                         //  _amount = int.parse(value);
@@ -336,7 +326,7 @@ class _AddPageState extends State<AddPage> {
                     child: Material(
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
-                        splashColor: Colors.green, 
+ 
                         onTap: () {
                           // Navigator.of(context).pushNamed('/save_daily');
                         }, 
@@ -375,7 +365,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -395,7 +384,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -415,7 +403,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -435,7 +422,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -463,7 +449,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -483,7 +468,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -503,7 +487,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -523,7 +506,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -551,7 +533,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -571,7 +552,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -591,7 +571,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -611,7 +590,6 @@ class _AddPageState extends State<AddPage> {
                   child: Material(
                     color: Color.fromARGB(114, 238, 230, 201),
                     child: InkWell(
-                      splashColor: Colors.green,
                       onTap: () {},
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -634,7 +612,7 @@ class _AddPageState extends State<AddPage> {
           child: Column(
             children: [
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25),
                   child: Card(
                     child: TextField(
                       decoration: const InputDecoration(
@@ -650,14 +628,15 @@ class _AddPageState extends State<AddPage> {
                     ),
                   )),
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25),
                   child: Card(
                     child: TextField(
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Enter notes',
                       ),
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.text,
+                      maxLines: 2,
                       onChanged: (value) {
                         //setState(() {
                         //  _amount = int.parse(value);
@@ -673,7 +652,7 @@ class _AddPageState extends State<AddPage> {
                     child: Material(
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
-                        splashColor: Colors.green, 
+ 
                         onTap: () {
                           // Navigator.of(context).pushNamed('/save_daily');
                         }, 
