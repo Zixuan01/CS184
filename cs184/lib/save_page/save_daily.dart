@@ -85,7 +85,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                   children: [
                     const Text("Start date",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
@@ -110,7 +111,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                       // This is called when the user changes the date.
                                       onDateTimeChanged: (DateTime newDate) {
                                         setState(() => startdate = newDate);
-                                        difference = enddate.difference(startdate);
+                                        difference =
+                                            enddate.difference(startdate);
                                         updateTotal(daily_budget);
                                         //startdate = newDate;
                                       },
@@ -140,7 +142,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                   children: [
                     const Text("End date",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
@@ -166,7 +169,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                                       onDateTimeChanged: (DateTime newDate) {
                                         setState(() => enddate = newDate);
                                         // enddate = newDate;
-                                        difference = enddate.difference(startdate);
+                                        difference =
+                                            enddate.difference(startdate);
                                         updateTotal(daily_budget);
                                       },
                                     ),
@@ -195,7 +199,8 @@ class _SavedailyPageState extends State<SavedailyPage> {
                   children: [
                     const Text("Daily Budget",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
@@ -219,12 +224,16 @@ class _SavedailyPageState extends State<SavedailyPage> {
                               onChanged: (value) {
                                 setState(() {
                                   // _amount = int.parse(value);
-                                  daily_budget = int.parse(value);
-                                  updateTotal(int.parse(value));
+                                  if (value.length != 0) {
+                                    daily_budget = int.parse(value);
+                                    updateTotal(daily_budget);
+                                  } else {
+                                    daily_budget = 0;
+                                    updateTotal(daily_budget);
+                                  }
                                 });
                               },
                             )
-
                           ],
                         ),
                       ),
@@ -238,30 +247,30 @@ class _SavedailyPageState extends State<SavedailyPage> {
                   children: [
                     const Text("Total Budget",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
                     Container(
-                      width: 186,
-                      decoration: BoxDecoration(
-                      border: Border.all(width: 1.0, color: Colors.black),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children:  [
-                              Text(
-                                "${_amount}",
-                                // "${_amount*difference.inDays}", // _amount*difference.inDays
-                                style: const TextStyle(fontSize: 22),
-                              )
-                            ],
-                          ),
+                        width: 186,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1.0, color: Colors.black),
                         ),
-                      )
-                    )
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Text(
+                                  "${_amount}",
+                                  // "${_amount*difference.inDays}", // _amount*difference.inDays
+                                  style: const TextStyle(fontSize: 22),
+                                )
+                              ],
+                            ),
+                          ),
+                        ))
                   ],
                 ),
               ),
@@ -275,12 +284,13 @@ class _SavedailyPageState extends State<SavedailyPage> {
                       child: InkWell(
                         onTap: () {
                           // Navigator.of(context).pushNamed('/save_daily');
-                        }, 
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(Icons.add_sharp), // <-- Icon
-                            Text("Add New Saving Plan", style: TextStyle(fontSize: 20)), // <-- Text
+                            Text("Add New Saving Plan",
+                                style: TextStyle(fontSize: 20)), // <-- Text
                           ],
                         ),
                       ),
@@ -295,7 +305,6 @@ class _SavedailyPageState extends State<SavedailyPage> {
     );
   }
 }
-
 
 class _DatePickerItem extends StatelessWidget {
   const _DatePickerItem({required this.children});
