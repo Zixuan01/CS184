@@ -20,182 +20,15 @@ class _SavePageState extends State<SavePage> {
     });
   }
 
-  Widget detail = Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 20),
-    child: Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: Row(
-            children: [
-              const Text("Saving Plans",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-              Container(
-                  )
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Container(
-            width: double.infinity,
-           child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.calendar_today), // <-- Icon
-                          Text("single goal", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.calendar_today_outlined), // <-- Icon
-                          Text("365 days",  style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox.fromSize(
-                size: Size(70, 70),
-                child: ClipOval(
-                  child: Material(
-                    color: Color.fromARGB(114, 238, 230, 201),
-                    child: InkWell(
-                      splashColor: Colors.green, 
-                      onTap: () {}, 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(Icons.calendar_month), // <-- Icon
-                          Text("12 month", style: TextStyle(fontSize: 13)), // <-- Text
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: Row(
-            children: [
-              const Text("In Progress",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    child: const Text(
-                      "temp",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 36.0),
-          child: Row(
-            children: [
-              const Text("Done",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-              Expanded(
-                child: Container(),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    child: const Text(
-                      "temp",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-        )
-      ],
-    ),
-  );
-  
-  List<Widget> widget_options = [];
-
-  void init_widgets() {
-    widget_options.add(detail);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    init_widgets();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.black,
+          title: const Text(
+            "Saving Plans",
+            textAlign: TextAlign.center,
+          ),
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -205,7 +38,112 @@ class _SavePageState extends State<SavePage> {
                 color: Colors.white,
               ))),
       body: Center(
-        child: widget_options.elementAt(_selected_index),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Row(
+                  children: [
+                    const Text("In Progress",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                    Expanded(
+                      child: Container(),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.0, color: Colors.black),
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          child: const Text(
+                            "temp",
+                            style: TextStyle(fontSize: 40),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 36.0),
+                child: Row(
+                  children: [
+                    const Text("Done",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                    Expanded(
+                      child: Container(),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.0, color: Colors.black),
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          child: const Text(
+                            "temp",
+                            style: TextStyle(fontSize: 40),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Container(
+                  width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox.fromSize(
+                      size: Size(300, 60),
+                      child: ClipRect(
+                        child: Material(
+                          color: Color.fromARGB(114, 238, 230, 201),
+                          child: InkWell( 
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/save_daily');
+                            }, 
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.add_sharp), // <-- Icon
+                                Text("Create New Saving Plan", style: TextStyle(fontSize: 20)), // <-- Text
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
