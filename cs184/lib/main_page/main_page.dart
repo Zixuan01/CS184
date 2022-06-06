@@ -14,12 +14,11 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  DatabaseReference id = FirebaseDatabase.instance.ref(
-      'id/' + FirebaseAuth.instance.currentUser!.uid.toString() + '/email');
+  DatabaseReference id = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/email');
 
   @override
   Widget build(BuildContext context) {
-    // print(2);
     id.onValue.listen((event) {
       String email = event.snapshot.value.toString();
       print(email);
