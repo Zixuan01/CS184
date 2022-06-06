@@ -247,17 +247,20 @@ class _SavedailyPageState extends State<SavedailyPage> {
                       decoration: BoxDecoration(
                       border: Border.all(width: 1.0, color: Colors.black),
                       ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children:  [
-                            Text(
-                              "${_amount}",
-                              // "${_amount*difference.inDays}", // _amount*difference.inDays
-                              style: const TextStyle(fontSize: 22),
-                            )
-                          ],
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children:  [
+                              Text(
+                                "${_amount}",
+                                // "${_amount*difference.inDays}", // _amount*difference.inDays
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
+                      )
                     )
                   ],
                 ),
