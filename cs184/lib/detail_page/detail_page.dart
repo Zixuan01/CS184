@@ -1,3 +1,4 @@
+import 'package:cs184/save_page/save_customize.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,118 @@ class _DetailPageState extends State<DetailPage> {
   static double expanse = 0;
   static double income = 0;
   bool flag = false;
+
+  DatabaseReference account = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/account');
+  static List<Widget> accounts = [];
+  static int total = 0;
+  static int negative = 0;
+  bool flag_asset = false;
+
+  void tmp_asset() async {
+    var data = await account.get();
+    var map = data.value as Map;
+
+    for (var i = 0; i < map.length; i++) {
+      // positive asset
+      if (map.values.elementAt(i)["balance"] > 0) {
+        // int a = map.values.elementAt(i)["balance"];
+        // print(map.keys.elementAt(i));
+        total += 1;
+      } else {
+        // double b = map.values.elementAt(i)["balance"];
+        negative += 1;
+        total += 1;
+      }
+      // Icon icon;
+      // if (map.keys.elementAt(i).toString() == "000000") {
+      //   icon = Icon(
+      //     Icons.attach_money,
+      //     size: 35,
+      //   );
+      // } else {
+      //   icon = Icon(
+      //     Icons.credit_card,
+      //     size: 35,
+      //   );
+      // }
+
+      Icon icon = IconTypeMapping()
+          .mapTypeToIcon(map.values.elementAt(i)['type'].toString());
+      Widget temp = Padding(
+        padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+        child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 1),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: icon,
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 10.0, top: 5, bottom: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0),
+                            child: Text(
+                              map.values.elementAt(i)['type'].toString(),
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Text(
+                              map.keys.elementAt(i).toString(),
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.normal),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 10.0, top: 5, bottom: 5),
+                        child: Text(
+                          map.values.elementAt(i)['note'].toString(),
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 10.0, top: 5, bottom: 5),
+                  child: Text(
+                    map.values.elementAt(i)['balance'].toString(),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            )),
+      );
+      accounts.add(temp);
+    }
+    flag_asset = true;
+    setState(() {});
+  }
 
   void tmp() async {
     var data = await id.get();
@@ -329,28 +442,36 @@ class _DetailPageState extends State<DetailPage> {
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: Row(
-                      children: const [
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Total Asset",
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
+                          ),
+                          Text(total.toString(),
+                              style: TextStyle(
+                                fontSize: 22,
+                              )),
+                        ],
+                      )),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         Text(
-                          "Total Asset",
+                          "Negative Asset",
                           style: TextStyle(
                             fontSize: 22,
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: const [
-                      Text(
-                        "Negative Asset",
-                        style: TextStyle(
-                          fontSize: 22,
                         ),
-                      ),
-                    ],
-                  )
+                        Text(
+                          negative.toString(),
+                          style: TextStyle(fontSize: 22),
+                        )
+                      ])
                 ],
               ),
             ),
@@ -395,23 +516,32 @@ class _DetailPageState extends State<DetailPage> {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    child: const Text(
-                      "temp",
-                      style: TextStyle(fontSize: 80),
-                    ),
-                  )
-                ],
+        Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.0, color: Colors.black),
+              ),
+              // child: Expanded(
+              //   // child: SingleChildScrollView(
+              //   child: ListView(
+              //     physics: const AlwaysScrollableScrollPhysics(),
+              //     shrinkWrap: true,
+              //     children: transactions,
+              //     // ),
+              //   ),
+              // ),
+              child: Expanded(
+                child: ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: accounts.length,
+                  itemBuilder: (context, index) {
+                    return accounts[index];
+                  },
+                ),
               ),
             ),
           ),
@@ -429,6 +559,10 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   void initState() {
+    total = 0;
+    negative = 0;
+    accounts = [];
+    tmp_asset();
     income = 0;
     expanse = 0;
     transactions = [];

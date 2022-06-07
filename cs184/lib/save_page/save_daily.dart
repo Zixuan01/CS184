@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,6 +15,21 @@ class _SavedailyPageState extends State<SavedailyPage> {
   static DateTime startdate = DateTime(2016, 10, 26);
   static DateTime enddate = DateTime(2016, 10, 26);
   static Duration difference = startdate.difference(enddate);
+
+  int count = 0;
+  DatabaseReference save_plan = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/save');
+
+  void get_count() async {
+    var data = await save_plan.get();
+    var map = data.value as Map;
+    if (map.keys.isEmpty) {
+      count = 0;
+    } else {
+      count = map.length;
+    }
+  }
+
   int _selected_index = 0;
   static const option_style = TextStyle(
     fontSize: 30,
@@ -23,6 +40,13 @@ class _SavedailyPageState extends State<SavedailyPage> {
     setState(() {
       _selected_index = index;
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    get_count();
+    super.initState();
   }
 
   TextEditingController _controller = TextEditingController();
@@ -282,8 +306,16 @@ class _SavedailyPageState extends State<SavedailyPage> {
                     child: Material(
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
-                        onTap: () {
-                          // Navigator.of(context).pushNamed('/save_daily');
+                        onTap: () async {
+                          DatabaseReference cnt =
+                              save_plan.child(count.toString());
+                          await cnt.update({
+                            "start": startdate,
+                            "end": enddate,
+                            "amount": _amount
+                          });
+
+                          Navigator.of(context).pushNamed('/main_page');
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

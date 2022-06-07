@@ -73,6 +73,21 @@ class IconTypeMapping {
           Icons.card_giftcard,
           size: 40,
         );
+      case 'Debit':
+        return Icon(
+          Icons.add_card,
+          size: 40,
+        );
+      case 'Credit':
+        return Icon(
+          Icons.credit_card,
+          size: 40,
+        );
+      case 'Cash':
+        return Icon(
+          Icons.attach_money,
+          size: 40,
+        );
       case 'Dividend':
         return Icon(
           Icons.group_add,
