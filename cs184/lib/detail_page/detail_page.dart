@@ -43,18 +43,6 @@ class _DetailPageState extends State<DetailPage> {
         negative += 1;
         total += 1;
       }
-      // Icon icon;
-      // if (map.keys.elementAt(i).toString() == "000000") {
-      //   icon = Icon(
-      //     Icons.attach_money,
-      //     size: 35,
-      //   );
-      // } else {
-      //   icon = Icon(
-      //     Icons.credit_card,
-      //     size: 35,
-      //   );
-      // }
 
       Icon icon = IconTypeMapping()
           .mapTypeToIcon(map.values.elementAt(i)['type'].toString());
@@ -251,7 +239,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 children: [
                   const Text(
-                    "Monthly Balance",
+                    "Total Balance",
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                   ),
                   Padding(
@@ -379,7 +367,7 @@ class _DetailPageState extends State<DetailPage> {
             child: Column(
               children: [
                 const Text(
-                  "Monthly Balance",
+                  "Total Balance",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
                 Padding(
