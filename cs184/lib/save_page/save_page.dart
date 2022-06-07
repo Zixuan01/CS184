@@ -48,7 +48,8 @@ class _SavePageState extends State<SavePage> {
                   children: [
                     const Text("In Progress",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
@@ -82,7 +83,8 @@ class _SavePageState extends State<SavePage> {
                   children: [
                     const Text("Done",
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            fontSize: 26, fontWeight: FontWeight.bold)),
                     Expanded(
                       child: Container(),
                     ),
@@ -114,31 +116,33 @@ class _SavePageState extends State<SavePage> {
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Container(
                   width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox.fromSize(
-                      size: Size(300, 60),
-                      child: ClipRect(
-                        child: Material(
-                          color: Color.fromARGB(114, 238, 230, 201),
-                          child: InkWell( 
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/save_daily');
-                            }, 
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.add_sharp), // <-- Icon
-                                Text("Create New Saving Plan", style: TextStyle(fontSize: 20)), // <-- Text
-                              ],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox.fromSize(
+                        size: Size(300, 60),
+                        child: ClipRect(
+                          child: Material(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).pushNamed('/save_daily');
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.add_sharp), // <-- Icon
+                                  Text("Create New Saving Plan",
+                                      style:
+                                          TextStyle(fontSize: 20)), // <-- Text
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
                 ),
               ),
             ],

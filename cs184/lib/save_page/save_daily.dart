@@ -22,11 +22,12 @@ class _SavedailyPageState extends State<SavedailyPage> {
 
   void get_count() async {
     var data = await save_plan.get();
-    var map = data.value as Map;
-    if (map.keys.isEmpty) {
-      count = 0;
-    } else {
+    // var map = data.value as Map;
+    if (data.exists) {
+      var map = data.value as List;
       count = map.length;
+    } else {
+      count = 1;
     }
   }
 
@@ -309,9 +310,10 @@ class _SavedailyPageState extends State<SavedailyPage> {
                         onTap: () async {
                           DatabaseReference cnt =
                               save_plan.child(count.toString());
+
                           await cnt.update({
-                            "start": startdate,
-                            "end": enddate,
+                            "start": startdate.toString().split(" ")[0],
+                            "end": enddate.toString().split(" ")[0],
                             "amount": _amount
                           });
 
