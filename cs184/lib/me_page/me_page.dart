@@ -72,26 +72,52 @@ class _MePageState extends State<MePage> {
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 50.0),
-                  child: Container(
-                    width: double.infinity,
-                    child: Text(
-                      "Accounting days: ",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  )),
-              Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 50.0),
-                  child: Container(
-                    width: double.infinity,
-                    child: Text(
-                      "Number of accounts: ",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10.0, left: 70.0),
+                      child: Container(
+                        child: Text(
+                          "Accounting days: ",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      )),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10.0, right: 70.0),
+                      child: Container(
+                        child: Text(
+                          "30",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      )),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10.0, left: 70.0),
+                      child: Container(
+                        child: Text(
+                          "Number of accounts: ",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      )),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10.0, right: 70.0),
+                      child: Container(
+                        child: Text(
+                          "4",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      )),
+                ],
+              ),
               // Padding(
               // //   padding: const EdgeInsets.only(top: 36.0, left: 150.0, right: 80.0),
               // padding: const EdgeInsets.symmetric(horizontal: 10.0),

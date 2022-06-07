@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,8 +18,10 @@ class _AddPageState extends State<AddPage> {
   Sky _selectedSegment = Sky.expense;
   static const color_o = Color(0xFFFFC107);
   int _selected_index = -1;
-  int _amount = 0;
+  double _amount = 0;
   String _note = "";
+  DatabaseReference account = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/transaction');
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +53,7 @@ class _AddPageState extends State<AddPage> {
                               keyboardType: TextInputType.number,
                               onChanged: (value) {
                                 setState(() {
-                                  _amount = int.parse(value);
+                                  _amount = double.parse(value);
                                 });
                               },
                             ),
@@ -128,7 +132,25 @@ class _AddPageState extends State<AddPage> {
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
                             ),
-                            onPressed: () {},
+                            onPressed: () async {
+                              DatabaseReference transaction = account.child(
+                                  int.parse(DateTime.now()
+                                          .toString()
+                                          .substring(0, 15)
+                                          .replaceAll(RegExp('[^0-9]'), ''))
+                                      .toString());
+
+                              await transaction.update({
+                                "amount":
+                                    type == 'Expanse' ? -_amount : _amount,
+                                "type": category,
+                                "note": _note,
+                                "date": DateTime.now().toString().split(" ")[0],
+                                'account': 000000
+                              });
+
+                              Navigator.of(context).pushNamed('/main_page');
+                            },
                           ))
                     ],
                   )

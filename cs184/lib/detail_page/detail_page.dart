@@ -29,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
   bool flag_asset = false;
 
   void tmp_asset() async {
-    var data = await account.get();
+    var data = await account.orderByKey().get();
     var map = data.value as Map;
 
     for (var i = 0; i < map.length; i++) {
@@ -134,7 +134,7 @@ class _DetailPageState extends State<DetailPage> {
   }
 
   void tmp() async {
-    var data = await id.get();
+    var data = await id.orderByKey().get();
     var map = data.value as Map;
 
     for (var i = 0; i < map.length; i++) {
