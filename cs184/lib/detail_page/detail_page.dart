@@ -16,8 +16,8 @@ class _DetailPageState extends State<DetailPage> {
   DatabaseReference id = FirebaseDatabase.instance
       .ref('id/${FirebaseAuth.instance.currentUser!.uid}/transaction');
   static List<Widget> transactions = [];
-  static int expanse = 0;
-  static int income = 0;
+  static double expanse = 0;
+  static double income = 0;
   bool flag = false;
 
   void tmp() async {
@@ -26,10 +26,10 @@ class _DetailPageState extends State<DetailPage> {
 
     for (var i = 0; i < map.length; i++) {
       if (map.values.elementAt(i)["amount"] > 0) {
-        int a = map.values.elementAt(i)["amount"];
+        double a = double.parse(map.values.elementAt(i)["amount"].toString());
         income += a;
       } else {
-        int b = map.values.elementAt(i)["amount"];
+        double b = double.parse(map.values.elementAt(i)["amount"].toString());
         expanse += b;
       }
       Icon icon = IconTypeMapping()
@@ -218,16 +218,32 @@ class _DetailPageState extends State<DetailPage> {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.black),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: transactions,
+        Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.0, color: Colors.black),
+              ),
+              // child: Expanded(
+              //   // child: SingleChildScrollView(
+              //   child: ListView(
+              //     physics: const AlwaysScrollableScrollPhysics(),
+              //     shrinkWrap: true,
+              //     children: transactions,
+              //     // ),
+              //   ),
+              // ),
+              child: Expanded(
+                child: ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: transactions.length,
+                  itemBuilder: (context, index) {
+                    return transactions[index];
+                  },
+                ),
               ),
             ),
           ),
