@@ -17,4 +17,4 @@ The goal of the project is to build an app to help people to keep track of their
 ## Design Doc, User Manual, and Video
 - Design Doc: https://docs.google.com/document/d/11IFJ8FLx-TasuhttRClwxIYvYB45YOwfPEsTBQ1Px-A/edit?usp=sharing
 - Manual: https://docs.google.com/document/d/1Zo-_FczD4iY2AveUEl9YUPapgengIxMpxjCF1eHB93I/edit
-- Video: 
+- Video: https://youtu.be/Ff94UJfEiV4
