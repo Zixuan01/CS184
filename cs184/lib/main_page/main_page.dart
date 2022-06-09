@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> {
     var map = data.value as Map;
 
     if (map.length > 5) {
-      for (var i = 0; i < 5; i++) {
+      for (var i = map.length - 1; i > map.length - 6; i--) {
         Icon icon = IconTypeMapping()
             .mapTypeToIcon(map.values.elementAt(i)['type'].toString());
         // print(map.values.elementAt(i)['amount']);

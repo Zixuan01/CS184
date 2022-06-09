@@ -125,7 +125,7 @@ class _DetailPageState extends State<DetailPage> {
     var data = await id.orderByKey().get();
     var map = data.value as Map;
 
-    for (var i = 0; i < map.length; i++) {
+    for (var i = map.length - 1; i >= 0; i--) {
       if (map.values.elementAt(i)["amount"] > 0) {
         double a = double.parse(map.values.elementAt(i)["amount"].toString());
         income += a;

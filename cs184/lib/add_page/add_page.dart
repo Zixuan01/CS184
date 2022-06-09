@@ -142,7 +142,7 @@ class _AddPageState extends State<AddPage> {
 
                               await transaction.update({
                                 "amount":
-                                    type == 'Expanse' ? -_amount : _amount,
+                                    type == 'Expense' ? -_amount : _amount,
                                 "type": category,
                                 "note": _note,
                                 "date": DateTime.now().toString().split(" ")[0],
@@ -201,7 +201,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Shop");
+                          onTap("Expense", "Shop");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -223,7 +223,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Traffic");
+                          onTap("Expense", "Traffic");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -244,7 +244,9 @@ class _AddPageState extends State<AddPage> {
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
                         splashColor: Colors.green,
-                        onTap: () {},
+                        onTap: () {
+                          onTap("Expense", "Snack");
+                        },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -273,7 +275,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Sport");
+                          onTap("Expense", "Sport");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -295,7 +297,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Game");
+                          onTap("Expense", "Game");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -317,7 +319,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Phone");
+                          onTap("Expense", "Phone");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -339,7 +341,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Health");
+                          onTap("Expense", "Health");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -369,7 +371,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Makeup");
+                          onTap("Expense", "Makeup");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -391,7 +393,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "House");
+                          onTap("Expense", "House");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -413,7 +415,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Study");
+                          onTap("Expense", "Study");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -435,7 +437,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Network");
+                          onTap("Expense", "Network");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

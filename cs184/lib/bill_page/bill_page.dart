@@ -51,8 +51,6 @@ class _BillPageState extends State<BillPage> {
           exp_month[m - 1] += b;
         }
       }
-      print("???");
-      print(map);
     }
 
     flag = true;
@@ -63,6 +61,10 @@ class _BillPageState extends State<BillPage> {
   void initState() {
     yearly_expense = 0;
     yearly_income = 0;
+
+    exp_month = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    inc_month = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    bal_month = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     tmp_bill();
 
