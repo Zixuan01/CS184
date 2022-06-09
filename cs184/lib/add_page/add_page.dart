@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,71 +18,147 @@ class _AddPageState extends State<AddPage> {
   Sky _selectedSegment = Sky.expense;
   static const color_o = Color(0xFFFFC107);
   int _selected_index = -1;
-
-  void onTap(String type, String category) {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text(type),
-            content: Text(category),
-            actions: <Widget>[
-              Column(
-                children: [
-                  Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5.0),
-                      child: Card(
-                        child: TextField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Enter amount',
-                          ),
-                          keyboardType: TextInputType.number,
-                          onChanged: (value) {
-                            //setState(() {
-                            //  _amount = int.parse(value);
-                            //});
-                          },
-                        ),
-                      )),
-                  Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5.0),
-                      child: Card(
-                        child: TextField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Enter notes',
-                          ),
-                          keyboardType: TextInputType.number,
-                          onChanged: (value) {
-                            //setState(() {
-                            //  _amount = int.parse(value);
-                            //});
-                          },
-                        ),
-                      )),
-                  Padding(
-                      padding: EdgeInsets.only(top: 10.0),
-                      child: CupertinoButton(
-                        color: Color.fromARGB(114, 238, 230, 201),
-                        child: Text(
-                          "+Add New Record",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        ),
-                        onPressed: () {},
-                      ))
-                ],
-              )
-            ],
-          );
-        });
-  }
+  double _amount = 0;
+  String _note = "";
+  DatabaseReference account = FirebaseDatabase.instance
+      .ref('id/${FirebaseAuth.instance.currentUser!.uid}/transaction');
 
   @override
   Widget build(BuildContext context) {
     var default_color = Color.fromARGB(114, 238, 230, 201);
     var selected_color = Color.fromARGB(255, 238, 230, 201);
     bool _selected = false;
+
+    void onTap(String type, String category) {
+      String method = "Select a payment method";
+
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return StatefulBuilder(builder: ((context, setState) {
+              return AlertDialog(
+                title: Text(type),
+                content: Text(category),
+                actions: <Widget>[
+                  Column(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Card(
+                            child: TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Enter amount',
+                              ),
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) {
+                                setState(() {
+                                  _amount = double.parse(value);
+                                });
+                              },
+                            ),
+                          )),
+                      Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Card(
+                            child: TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Enter notes',
+                              ),
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) {
+                                setState(() {
+                                  _note = value;
+                                });
+                              },
+                            ),
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 1.0,
+                            ),
+                          ),
+                          child: CupertinoButton(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  method,
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: Colors.black,
+                                ),
+                              ],
+                            ),
+                            onPressed: () {
+                              showCupertinoModalPopup<void>(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    CupertinoActionSheet(
+                                  title: const Text('Payment Method'),
+                                  message: const Text(
+                                      'Please select a payment method'),
+                                  actions: <CupertinoActionSheetAction>[
+                                    CupertinoActionSheetAction(
+                                      onPressed: () {
+                                        setState(() {
+                                          method = "Cash";
+                                          Navigator.of(context).pop();
+                                        });
+                                      },
+                                      child: const Text('Cash'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(top: 10.0),
+                          child: CupertinoButton(
+                            color: Color.fromARGB(114, 238, 230, 201),
+                            child: Text(
+                              "+Add New Record",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                            onPressed: () async {
+                              DatabaseReference transaction = account.child(
+                                  int.parse(DateTime.now()
+                                          .toString()
+                                          .substring(0, 15)
+                                          .replaceAll(RegExp('[^0-9]'), ''))
+                                      .toString());
+
+                              await transaction.update({
+                                "amount":
+                                    type == 'Expense' ? -_amount : _amount,
+                                "type": category,
+                                "note": _note,
+                                "date": DateTime.now().toString().split(" ")[0],
+                                'account': 000000
+                              });
+
+                              Navigator.of(context).pushNamed('/main_page');
+                            },
+                          ))
+                    ],
+                  )
+                ],
+              );
+            }));
+          });
+    }
 
     Widget expanse = Container(
       /*child: Text(
@@ -123,7 +201,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Shop");
+                          onTap("Expense", "Shop");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -145,7 +223,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Traffic");
+                          onTap("Expense", "Traffic");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +244,9 @@ class _AddPageState extends State<AddPage> {
                       color: Color.fromARGB(114, 238, 230, 201),
                       child: InkWell(
                         splashColor: Colors.green,
-                        onTap: () {},
+                        onTap: () {
+                          onTap("Expense", "Snack");
+                        },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -195,7 +275,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Sport");
+                          onTap("Expense", "Sport");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -217,7 +297,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Game");
+                          onTap("Expense", "Game");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -239,7 +319,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Phone");
+                          onTap("Expense", "Phone");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -261,7 +341,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Health");
+                          onTap("Expense", "Health");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -291,7 +371,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Makeup");
+                          onTap("Expense", "Makeup");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -313,7 +393,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "House");
+                          onTap("Expense", "House");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -335,7 +415,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Study");
+                          onTap("Expense", "Study");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -357,7 +437,7 @@ class _AddPageState extends State<AddPage> {
                       child: InkWell(
                         splashColor: Colors.green,
                         onTap: () {
-                          onTap("Expanse", "Network");
+                          onTap("Expense", "Network");
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

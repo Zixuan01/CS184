@@ -38,6 +38,8 @@ dependencies:
   fl_chart: ^0.50.6
   firebase_core: ^1.17.0
   firebase_auth: ^3.3.19
+  http: ^0.13.3  
+  firebase_database: ^9.0.15
   get: ^4.6.5
 
 dev_dependencies:
@@ -92,3 +94,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
